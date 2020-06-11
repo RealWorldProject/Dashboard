@@ -4,6 +4,7 @@ const MONGODBURI = 'mongodb://localhost:27017/Dashboard';
 const connectDB = require('./utils/db');
 
 const app = express();
+app.set('view engine', 'ejs');
 
 app.use(express.json({ extended: false }));
 
