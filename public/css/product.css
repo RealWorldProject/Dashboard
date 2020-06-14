@@ -1,0 +1,59 @@
+.container-product{
+	margin-left: 300px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: 30px;
+}
+
+td, th {
+  border: 2px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+	font-size: 15px;
+}
+.edit {
+	font-size: 25px;
+	padding-left: 10px;
+	color: #0043ff;
+}
+.trash {
+	font-size: 25px;
+	padding-left: 10px;
+	color: red;
+}
+.pagination {
+	margin-top: 30px;
+	margin-left: 35px;
+	float: left;
+}
+.previous {
+	background-color: #0043ff;
+}
+.next {
+	background-color: #0043ff;
+	margin-left: 10px;
+}
+.add {
+	background-color: #0043ff;
+}
+
+.add-product {
+	float: right;
+	margin-top: 20px;
+	margin-right: 110px;
+}
+.previous:hover {
+  background-color: #00c301;
+}
+.next:hover {
+  background-color: #00c301;
+}
+.add:hover {
+  background-color: #00c301;
+}

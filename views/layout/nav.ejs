@@ -1,0 +1,76 @@
+<div class="navbar-fixed">
+  <nav class="nav-wrapper">
+    <a href="#!" id="header" class="brand-logo white-text"><%- title %> </a>
+    <form>
+      <div class="input-field" id="search-field">
+        <input id="search" type="search" placeholder="search" required />
+        <label class="label-icon" for="search"
+          ><i class="material-icons search-icon">search</i></label
+        >
+        <i class="material-icons" style="font-size: 16px;">close</i>
+      </div>
+    </form>
+  </nav>
+</div>
+
+<div class="container">
+  <ul id="slide-out" class="sidenav sidenav-fixed">
+    <li id="logo-text" class="center-align">
+      <span>Self-Checkout</span>
+    </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <ul class="collapsible expandable">
+      <li>
+        <div class="collapsible-header row">
+          <div class="col s3">
+            <img src="/image/avatar.png" alt="staff image" />
+          </div>
+          <div class="name col s6 left-align">
+            <p>Prasanna</p>
+            <strong>Administrator</strong>
+          </div>
+          <div class="arrow col s3">
+            <i class="material-icons">arrow_drop_down</i>
+          </div>
+        </div>
+        <div class="collapsible-body col s12 center-align logout">
+          <a href="#" class="waves-effect">Log out</a>
+        </div>
+      </li>
+    </ul>
+
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><span id="dashboard">Dashboard</span></li>
+    <div class="content">
+      <ul class="sidebar">
+        <li class="tab btn-toggle change-color active">
+          <a class="waves-effect waves-light" href="#!"
+            ><i class="material-icons prefix">local_parking</i>Products</a
+          >
+        </li>
+        <li class="tab btn-toggle">
+          <a class="waves-effect waves-light" href="#!"
+            ><i class="material-icons prefix">assignment_ind</i>Employees</a
+          >
+        </li>
+        <li class="tab btn-toggle">
+          <a class="waves-effect waves-light" href="#!"
+            ><i class="material-icons prefix">group</i>Users</a
+          >
+        </li>
+        <li class="tab btn-toggle">
+          <a class="waves-effect waves-light" href="#!"
+            ><i class="material-icons prefix">shopping_cart</i>Device</a
+          >
+        </li>
+      </ul>
+    </div>
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"
+    ><i class="material-icons">menu</i></a
+  >
+</div>

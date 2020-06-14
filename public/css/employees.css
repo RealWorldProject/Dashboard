@@ -1,0 +1,82 @@
+.container-employee {
+  margin-left: 300px;
+}
+body {
+  background-color: #f3f3f3;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  /* margin-left: 30px; */
+}
+table .btn,
+.btn:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+td,
+th {
+  border: 2px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  font-size: 15px;
+}
+td {
+  padding: 0px;
+}
+.container-employee .card {
+  width: 1120px;
+  margin-left: 30px;
+}
+.pagination .btn {
+  background-color: #0043ff;
+  color: aliceblue;
+}
+.add-employee .btn-floating {
+  background-color: #0043ff;
+  color: aliceblue;
+}
+.edit {
+  font-size: 25px;
+  padding-left: 10px;
+  color: #0043ff;
+}
+.trash {
+  font-size: 25px;
+  padding-left: 10px;
+  color: red;
+}
+.pagination {
+  margin-top: 30px;
+  margin-left: 35px;
+  float: left;
+}
+.previous {
+  background-color: #0043ff;
+}
+.next {
+  background-color: #0043ff;
+  margin-left: 10px;
+}
+.add {
+  background-color: #0043ff;
+}
+
+.add-employee {
+  float: right;
+  margin-top: 30px;
+  margin-right: 110px;
+}
+.previous:hover {
+  background-color: #00c301;
+}
+.next:hover {
+  background-color: #00c301;
+}
+.add:hover {
+  background-color: #00c301;
+}

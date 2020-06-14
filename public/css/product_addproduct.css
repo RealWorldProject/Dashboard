@@ -1,0 +1,140 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-content h1{
+    color: blue;
+    font-size: 40px;
+}
+
+
+table,
+th,
+td {
+  text-align: center;
+}
+
+.modal {
+    background-color: #f4f4f4;
+    overflow: hidden;
+    margin: 10% auto;
+    padding: 20px;
+    width: 50%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-duration:1s;
+  }
+
+.modal-close {
+    color: rgb(158, 154, 154);
+    margin-top: 20px;
+    float: right;
+    font-size: 60px;
+}
+
+.modal-close:hover,.modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal {
+    width: 550px;
+    max-height: 80%;
+    border: 10px rgb(36, 20, 128, 0.2);
+    padding: 20px;
+    border-radius: 9px;
+    background: rgb(250, 249, 247);
+    color: var(--primary-color);
+    left: 10%;
+    box-sizing: border-box;
+    box-decoration-break: slice;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.modal input[type=text]{
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none ;
+   /* border-bottom: 1px solid;*/
+    font-family: sans-serif;
+    font-size: 20px;
+   /* padding: 5px 0px;*/
+    transition: border 0.5s;
+    outline: none;
+    margin-left: 0px;
+    color:var(--primary-color);
+  }
+.modal input[placeholder]{
+   font-size: 20px;
+   margin-top: 5px;
+  }
+
+
+
+.input-field {
+    margin-top: 10px;
+    margin-bottom: -3px;
+}
+
+.row {
+    border: solid thin;
+    padding: 7px;
+    padding-bottom: 0px;
+
+}
+
+#btnAdd{
+    margin-left: 140px;
+    border: none;
+    margin-top: 0px;
+    width: 140px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+#addProductForm .input-field input[type="text"]:focus + label ,
+#addProductForm .input-field input[type="password"]:focus + label {
+  color: #0043ff;
+}
+
+#addProductForm .input-field input[type="text"]:focus,
+#addProductForm .input-field input[type="password"]:focus {
+  border-bottom: 2px solid #0043ff !important;
+  
+}
+
+#addProductForm .input-field input[type="text"].valid{
+  border-bottom: 2px solid #0043ff !important;
+  box-shadow: none;
+}
+
+/* input.valid:not([type]), input.valid:not([type]):focus, input.valid[type=text]:not(.browser-default), input.valid[type=text]:not(.browser-default):focus, input.valid[type=password]:not(.browser-default), input.valid[type=password]:not(.browser-default):focus, input.valid[type=email]:not(.browser-default), input.valid[type=email]:not(.browser-default):focus, input.valid[type=url]:not(.browser-default), input.valid[type=url]:not(.browser-default):focus, input.valid[type=time]:not(.browser-default), input.valid[type=time]:not(.browser-default):focus, input.valid[type=date]:not(.browser-default), input.valid[type=date]:not(.browser-default):focus, input.valid[type=datetime]:not(.browser-default), input.valid[type=datetime]:not(.browser-default):focus, input.valid[type=datetime-local]:not(.browser-default), input.valid[type=datetime-local]:not(.browser-default):focus, input.valid[type=tel]:not(.browser-default), input.valid[type=tel]:not(.browser-default):focus, input.valid[type=number]:not(.browser-default), input.valid[type=number]:not(.browser-default):focus, input.valid[type=search]:not(.browser-default), input.valid[type=search]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown {
+  border-bottom: 1px solid rgb(40, 3, 255);
+  -webkit-box-shadow: 0 1px 0 0 #4CAF50;
+  box-shadow: none;
+} */
+/* Valid color
+#addProductForm.input-field input[type=text].valid{
+  border-bottom: 2px solid #0043ff !important;
+  box-shadow: none;
+}
+invalid color
+#addProductForm .input-field input[type=text].invalid,
+#addProductForm .input-field input[type="password"].invalid {
+  border-bottom: 2px solid rgb(255, 0, 0);
+  box-shadow:none;
+} */
+/*#addProductForm .prefix.active{
+  color: #0043ff;
+}
+*/
+
