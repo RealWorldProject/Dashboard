@@ -8,12 +8,13 @@ var instance = M.Modal.init(elem);
 
 // for pagination
 let pageNumber = 1;
-let sn = 1;
+// let sn = 1;
 let empPerPage = 3;
 //for data
 const empTableTbody = document.querySelector(".container-employee tbody");
 const empForm = document.querySelector("#addEmployeeForm");
 const btnAdd = document.querySelector("#btnAdd");
+const info = document.querySelector("#info");
 document.querySelector(".add").addEventListener("click", function () {
   instance.open();
 });
@@ -41,6 +42,9 @@ empForm.onsubmit = async (e) => {
       }
     );
     M.toast({ html: "Employee Added Successfully", displayLength: 2000 });
+      empForm[0].value = "";
+      empForm[1].value = "";
+      empForm[2].value = "";
   } else {
     addEmployee = await fetch(
       "http://localhost:5000/admin/employee/update-employee",
@@ -52,8 +56,14 @@ empForm.onsubmit = async (e) => {
         body: JSON.stringify(data),
       }
     );
-    // instance.close();
+    instance.close();
     M.toast({ html: "Employee Updated Successfully", displayLength: 2000 });
+    btnAdd.innerText = "ADD EMPLOYEE";
+    info.textContent ="Create a new employee using this form. Fill them all.";
+    empForm[0].value = "";
+    empForm[1].value = "";
+    empForm[2].value = "";
+    
   }
 
   // let test = await addEmployee.json();
@@ -84,7 +94,7 @@ window.onload = () => {
 
 const addToEmpTable = (employees) => {
   let html = "";
-  // let sn = 1;
+  let sn = 1;
   for (const employee of employees) {
     html += `
     <tr class ="row${employee._id}">
@@ -139,6 +149,7 @@ const editEmployee = () => {
 
       document.getElementById("addEmployeeForm").style.display = "block";
       btnAdd.innerText = "Update Employee";
+      info.textContent ="Use this form to update the employee details. All details are required.";
       allEmployees();
     });
   });

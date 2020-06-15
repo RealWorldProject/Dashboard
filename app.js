@@ -12,14 +12,15 @@ app.use(express.static("public"));
 
 // Defining Routes
 
-//app.use('/admin/products', require('./routes/admin/products'));
+// admin product route
+app.use('/admin/product', require('./routes/admin/products'));
 
 // admin employee route
 app.use("/admin/employee", require("./routes/admin/employee"));
 
+
 app.use("/device", require("./routes/device"));
 
-app.get("/", (req, res) => res.send("App Has Started!!!"));
 
 // connecting DB
 connectDB(MONGODBURI);
