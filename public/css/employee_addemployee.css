@@ -130,21 +130,6 @@ input:focus::placeholder {
   box-shadow: none;
 }
 
-/* Valid color
-#addEmployeeForm.input-field input[type=text].valid{
-border-bottom: 2px solid #0043ff !important;
-box-shadow: none;
-}
-invalid color
-#addEmployeeForm .input-field input[type=text].invalid,
-#addEmployeeForm .input-field input[type="password"].invalid {
-border-bottom: 2px solid rgb(255, 0, 0);
-box-shadow:none;
-}
-/*#addEmployeeForm .prefix.active{
-color: #0043ff;
-}
-*/
 
 .toast {
   margin-right: 400px;

@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Poppins', sans-serif;
 }
@@ -138,3 +137,8 @@ invalid color
 }
 */
 
+.toast {
+  margin-right: 400px;
+  width: 380px;
+  text-align: center;
+}
