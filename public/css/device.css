@@ -1,5 +1,8 @@
+body {
+  background-color: #f3f3f3;
+}
 .container-device{
-	margin-left: 260px;
+	margin-left: 360px;
 }
 
 .device-list {
@@ -27,7 +30,7 @@
 .device-icon {
 	font-family: 'Material Icons';
   font-weight: normal;
-  float: left;
+  /* float: left; */
   font-style: normal;
   font-size: 60px;  /* Preferred icon size */
   display: inline-block;
@@ -40,10 +43,10 @@
   color: #32CD32;
 }
 
-.inactive-devices {
+/* .inactive-devices {
 	margin-top: 40px;
 	background-color: #F5F5F5;
-}
+} */
 
 table {
   border-collapse: collapse;
@@ -68,3 +71,38 @@ th {
     overflow-y: auto;
 }
 */
+.add {
+  background-color: #0043ff;
+}
+
+.add-employee .btn-floating {
+  background-color: #0043ff;
+  color: aliceblue;
+}
+
+.add-employee {
+  float: right;
+  margin-top: 30px;
+  margin-right: 110px;
+}
+
+.add:hover {
+  background-color: #00c301;
+}
+
+.edit {
+  font-size: 25px;
+  padding-left: 10px;
+  color: #0043ff;
+}
+.trash {
+  font-size: 25px;
+  padding-left: 10px;
+  color: red;
+}
+
+table .btn,
+.btn:hover {
+  background-color: transparent;
+  /* box-shadow: none; */
+}

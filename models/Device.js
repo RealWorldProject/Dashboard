@@ -10,7 +10,7 @@ const deviceSchema = mongoose.Schema({
         items: [
             {
                 product:{
-                    type: mongoose.Schema.Types.ObjectId;
+                    type: mongoose.Schema.Types.ObjectId,
                     ref: 'Product',
                     required: true
                 },

@@ -19,8 +19,10 @@ app.use('/admin/product', require('./routes/admin/products'));
 app.use("/admin/employee", require("./routes/admin/employee"));
 
 
-app.use("/device", require("./routes/device"));
+// app.use("/device", require("./routes/device"));
 
+// admin device route
+app.use("/admin/device", require("./routes/admin/device"));
 
 // connecting DB
 connectDB(MONGODBURI);
