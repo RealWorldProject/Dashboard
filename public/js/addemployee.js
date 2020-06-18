@@ -42,9 +42,9 @@ empForm.onsubmit = async (e) => {
       }
     );
     M.toast({ html: "Employee Added Successfully", displayLength: 2000 });
-      empForm[0].value = "";
-      empForm[1].value = "";
-      empForm[2].value = "";
+    empForm[0].value = "";
+    empForm[1].value = "";
+    empForm[2].value = "";
   } else {
     addEmployee = await fetch(
       "http://localhost:5000/admin/employee/update-employee",
@@ -59,11 +59,10 @@ empForm.onsubmit = async (e) => {
     instance.close();
     M.toast({ html: "Employee Updated Successfully", displayLength: 2000 });
     btnAdd.innerText = "ADD EMPLOYEE";
-    info.textContent ="Create a new employee using this form. Fill them all.";
+    info.textContent = "Create a new employee using this form. Fill them all.";
     empForm[0].value = "";
     empForm[1].value = "";
     empForm[2].value = "";
-    
   }
 
   // let test = await addEmployee.json();
@@ -94,7 +93,8 @@ window.onload = () => {
 
 const addToEmpTable = (employees) => {
   let html = "";
-  let sn = 1;
+  let sn = (pageNumber - 1) * empPerPage + 1;
+  console.log(sn);
   for (const employee of employees) {
     html += `
     <tr class ="row${employee._id}">
@@ -149,7 +149,8 @@ const editEmployee = () => {
 
       document.getElementById("addEmployeeForm").style.display = "block";
       btnAdd.innerText = "Update Employee";
-      info.textContent ="Use this form to update the employee details. All details are required.";
+      info.textContent =
+        "Use this form to update the employee details. All details are required.";
       allEmployees();
     });
   });
@@ -173,7 +174,6 @@ document.querySelector(".previous").addEventListener("click", () => {
   pageNumber--;
 
   allEmployees();
-  sn--;
 });
 document.querySelector(".next").addEventListener("click", () => {
   pageNumber++;
@@ -181,30 +181,28 @@ document.querySelector(".next").addEventListener("click", () => {
 });
 
 // search
-// const searchEmp = async () => {
-//   const data = {
-//     searchTerm: document.querySelector("#search").value,
-//   };
-//   let allEmployees = await fetch(
-//     "http://localhost:5000/admin/employee/search-employee",
-//     {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(data),
-//     }
-//   );
-//   allEmployees = await allEmployees.json();
-//   addToEmpTable(allEmployees);
+const searchEmp = async () => {
+  const data = {
+    searchTerm: document.querySelector("#search").value,
+  };
+  let allEmployees = await fetch(
+    "http://localhost:5000/admin/employee/search-employee",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
+  allEmployees = await allEmployees.json();
+  addToEmpTable(allEmployees);
 
-//   removeEmployee();
+  removeEmployee();
 
-//   editEmployee();
-// };
+  editEmployee();
+};
 
-// document
-//   .querySelector(".search")
-//   .addEventListener("click", () => {
-//     searchEmp();
-//   });
+document.querySelector("#search").addEventListener("keyup", () => {
+  searchEmp();
+});

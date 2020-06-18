@@ -27,9 +27,7 @@ exports.postAddEmployee = async (req, res) => {
 };
 
 exports.getAllEmployee = async (req, res, next) => {
-  const name = req.params.name;
-  const page = req.query.page;
-  console.log(page);
+  const { name, page } = req.query;
   const empPerPage = 3;
   const employee = await Employee.find()
     .sort({ name: 1 })
@@ -68,4 +66,14 @@ exports.postUpdateEmployee = async (req, res, next) => {
     console.log(err.message);
   }
   res.status(200).json(data);
+};
+
+exports.postSearchEmployee = async (req, res) => {
+  console.log("Inside");
+  console.log(req.body.searchTerm);
+  const searchTerm = req.body.searchTerm;
+  var employeeRes = await Employee.find({
+    name: RegExp(searchTerm, "i"),
+  });
+  res.status(200).json(employeeRes);
 };
