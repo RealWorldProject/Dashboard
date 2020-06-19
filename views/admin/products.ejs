@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
   <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-   <!--For Fa Fa icons-->
+  <!--For Fa Fa icons-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" type="text/css" href="/css/product.css" />
@@ -25,17 +25,17 @@
 
 <body>
   <%- include('../layout/nav.ejs', {title: 'Product'}) %>
-<div class="container-product">
-  <div class="card">
-  <table class="striped centered table">
+  <div class="container-product">
+    <div class="card">
+      <table class="striped centered table">
         <thead>
           <tr>
-              <th>S.N</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Category</th>
-              <th>Action</th>
+            <th>S.N</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Action</th>
 
           </tr>
         </thead>
@@ -44,67 +44,64 @@
       </table>
     </div>
 
-      <div class="pagination">
-          <a class="waves-effect waves-light btn previous">Previous</a>
-          <a class="waves-effect waves-light btn next">Next</a>
+    <div class="pagination">
+      <a class="waves-effect waves-light btn previous">Previous</a>
+      <a class="waves-effect waves-light btn next">Next</a>
     </div>
 
     <div class="add-product">
-       <button
-       data-target="addProductForm" 
-       class="btn-floating btn-large waves-effect waves-light modal-trigger add">
-         <i class="material-icons">add</i> 
-        </button>
+      <button data-target="addProductForm" class="btn-floating btn-large waves-effect waves-light modal-trigger add">
+        <i class="material-icons">add</i>
+      </button>
     </div>
     <!-- ----------------Add Product Form-------------- -->
     <div class="modal">
-        <div class='modal-content'>
-          <form id="addProductForm">
-            <span class="modal-close btn-flat">&times;</span>
-            <h1>Company</h1>
-            <p id="info" style="font-size:15px; margin-bottom: 15px; font-family: sans-serif;">
-              Add a new product using this form. Fill them all.</p>
-            <div class="row">
-              <div class="input-field col s12">
-                <input type="text" placeholder="" id="name" name="name" required class="validate">
-                <label style="font-size:25px" for="name">Product Name</label>
-              </div>
+      <div class='modal-content'>
+        <form id="addProductForm">
+          <span class="modal-close btn-flat">&times;</span>
+          <h1>Company</h1>
+          <p id="info" style="font-size:15px; margin-bottom: 15px; font-family: sans-serif;">
+            Add a new product using this form. Fill them all.</p>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" placeholder="" id="name" name="name" required class="validate">
+              <label style="font-size:25px" for="name">Product Name</label>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input placeholder="" id="price" name="price" type="text"required class="validate">
-                <label style="font-size:25px" for="price">Product Price</label>
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="" id="price" name="price" type="text" required class="validate">
+              <label style="font-size:25px" for="price">Product Price</label>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input placeholder="" id="qty" name="qty" type="text" required class="validate">
-                <label style="font-size:25px" for="qty">Product Quantity</label>
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="" id="qty" name="qty" type="text" required class="validate">
+              <label style="font-size:25px" for="qty">Product Quantity</label>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <select name="category" id="category">
-                      <option value="Food">Food</option>
-                      <option value="Electronics">Electronics</option>
-                </select>
-                  <label style="font-size:17px">Category</label>
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <select name="category" id="category">
+                <option value="Food">Food</option>
+                <option value="Electronics">Electronics</option>
+              </select>
+              <label style="font-size:17px">Category</label>
             </div>
+          </div>
 
-            <input type="hidden" id="productID" name="productID" />
+          <input type="hidden" id="productID" name="productID" />
 
-              <button class="btn-floating btn-large waves-effect waves-light add"
-               id="btnAdd">
-                Add Product</button>
-            </form>
-        </div>
-  </div>
+          <button class="btn-floating btn-large waves-effect waves-light add" id="btnAdd">
+            Add Product</button>
+        </form>
+      </div>
+    </div>
     <!-- ----------------Product form close-------------- -->
-  </div>  
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="/js/nav.js"></script>

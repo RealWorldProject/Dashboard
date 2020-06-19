@@ -1,7 +1,7 @@
 body {
-  background-color: #f3f3f3;
+	background-color: #f3f3f3;
 }
-.container-device{
+.container-device {
 	margin-left: 360px;
 }
 
@@ -11,36 +11,32 @@ body {
 	margin-top: 50px;
 	padding: 10px;
 	float: left;
-	background-color: #F5F5F5;
-
+	width: 200px;
 }
 .device-name {
 	font-size: 22px;
-	float: right;
 	color: black;
-
 }
-
 
 .device-active {
 	font-size: 15px;
-	color: #32CD32;
+	color: #32cd32;
 }
 
 .device-icon {
 	font-family: 'Material Icons';
-  font-weight: normal;
-  /* float: left; */
-  font-style: normal;
-  font-size: 60px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  color: #32CD32;
+	font-weight: normal;
+	float: left;
+	font-style: normal;
+	font-size: 60px; /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	color: #32cd32;
 }
 
 /* .inactive-devices {
@@ -49,20 +45,20 @@ body {
 } */
 
 table {
-  border-collapse: collapse;
-  width: 90%;
-  margin-left: 30px;
+	border-collapse: collapse;
+	width: 90%;
+	margin-left: 30px;
 }
 
-td, th {
-  border: 2px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+td,
+th {
+	border: 2px solid #dddddd;
+	text-align: left;
+	padding: 8px;
 }
 
 th {
 	font-size: 18px;
-
 }
 
 /*
@@ -72,37 +68,37 @@ th {
 }
 */
 .add {
-  background-color: #0043ff;
+	background-color: #0043ff;
 }
 
 .add-employee .btn-floating {
-  background-color: #0043ff;
-  color: aliceblue;
+	background-color: #0043ff;
+	color: aliceblue;
 }
 
 .add-employee {
-  float: right;
-  margin-top: 30px;
-  margin-right: 110px;
+	float: right;
+	margin-top: 30px;
+	margin-right: 110px;
 }
 
 .add:hover {
-  background-color: #00c301;
+	background-color: #00c301;
 }
 
 .edit {
-  font-size: 25px;
-  padding-left: 10px;
-  color: #0043ff;
+	font-size: 25px;
+	padding-left: 10px;
+	color: #0043ff;
 }
 .trash {
-  font-size: 25px;
-  padding-left: 10px;
-  color: red;
+	font-size: 25px;
+	padding-left: 10px;
+	color: red;
 }
 
 table .btn,
 .btn:hover {
-  background-color: transparent;
-  /* box-shadow: none; */
+	background-color: transparent;
+	/* box-shadow: none; */
 }

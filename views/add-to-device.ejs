@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+</head>
+
+<body>
+    <ul>
+        <% products.forEach(product => { %>
+        <li>
+            <form action="/billing/device-dashboard/add-to-device" method="POST">
+                <h1><%= product.name %></h1>
+                <input type="hidden" value="5eec4e02df7d5e2810a206b2" name="deviceID">
+                <input type="hidden" value="<%= product._id %>" name="productID">
+                <button type="submit">Add To Device</button>
+            </form>
+        </li>
+        <% }) %>
+    </ul>
+</body>
+
+</html>
