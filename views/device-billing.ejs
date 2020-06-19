@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!--For Fa Fa icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bill.css" />
+
+    <title>Billing</title>
+</head>
+
+<body>
+    <%- include('./layout/nav.ejs', {title: 'Billing'}) %>
+
+    <div class="tablebill card-panel">
+        <table class="striped highlight centered devicetable">
+            <thead>
+                <tr>
+                    <th>S.N</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(d => { %>
+                <tr class="row<%= d.product._id %>">
+                    <td>1</td>
+                    <td id="prodName"><%= d.product.name %></td>
+                    <td id="prodPrice"><%= d.product.price %></td>
+                    <td id="prodQty"><%= d.quantity %></td>
+                    <td id="prodTotal"><%= d.product.price * d.quantity %></td>
+                    <td><button class="waves-effect waves-light removebtn" value="<%= d.product._id %>"><i class="
+                            material-icons left">delete</i></button></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <section id="lower">
+        <div class="row center-align">
+            <div class="totalamount col s5">
+                <span>Total Amount :</span>
+                <input type="text" style="font-size:30px; width: 140px;" name="" id="grandTotal">
+            </div>
+            <div class="paidamount col s4">
+                <span>Paid Amount : </span>
+                <input type="text" style="font-size:30px; width: 140px;" name="" id="amountPaid">
+            </div>
+            <div class="col s3 center-align checkout-btn">
+                <button class="waves-effect waves-light btn-large modal-trigger checkout" href="#modal1"><i
+                        class="material-icons left">print</i>Check out</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal1" class="modal">
+        <div class='modal-content center'>
+            <h5>Self-Checkout Store</h5>
+            <hr>
+            <h4>*** RECEIPT ***</h4>
+            <div id="text">
+                <p class="alignleft">Bill No. <span class="billNumber"></span></p>
+                <p class="alignrightDate">Date: <%= new Date().toDateString() %> </p>
+                <div style="clear: both;"></div>
+            </div>
+            <hr> <br>
+            <table class="billTable">
+                <thead>
+                    <tr>
+                        <th>S.N.</th>
+                        <th>Items</th>
+                        <th>Qty</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table><br>
+            <hr>
+            <div class="row">
+                <div class="col s6 left-align">Total Amount</div>
+                <div class="col s6 right-align" id="billGrandTotal">5000</div>
+            </div>
+            <div class="row">
+                <div class="col s6 left-align">Total Paid</div>
+                <div class="col s6 right-align" id="billPaid">5000</div>
+            </div>
+            <div class="row">
+                <div class="col s6 left-align">Return</div>
+                <div class="col s6 right-align" id="billDue">0</div>
+            </div>
+            <hr>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/for-socket.js"></script>
+        <script src="/js/nav.js"></script>
+        <script src="/js/bill.js"></script>
+
+
+</body>
+
+</html>

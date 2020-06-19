@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!--For Fa Fa icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/device.css" />
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <%- include('./layout/nav.ejs', {title: 'Dashboard'}) %>
+
+
+    <section>
+        <div class="scrollable">
+            <div class="container-device">
+
+                <div class="row">
+                    <% devices.forEach(device => { %>
+
+                    <div class='col s3 right-align'>
+                        <a class=" card device-list" href="/billing/device-dashboard/device/<%- device._id %> ">
+                            <div class="card-content">
+                                <i class="material-icons device-icon">perm_device_information</i>
+                                <div class="device-name"><%- device.name %> </div>
+
+                                <div class="device-active">
+                                    <p>Active</p>
+                                </div>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="scrollable">
+            <div class="container-device">
+                <div class="inactive-devices">
+                    <table class="striped centered">
+                        <thead>
+                            <tr>
+                                <th>S.N.</th>
+                                <th>Device Name</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Device One</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Device One</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Device One</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Device One</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Device One</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Device One</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Device One</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Device One</td>
+                                <td>Inactive</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Device One</td>
+                                <td>Inactive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, options);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems, options);
+    });
+
+    var elem = document.querySelector('.collapsible.expandable');
+    var instance = M.Collapsible.init(elem, {
+      accordion: false
+    });
+  </script> -->
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/adddevice.js"></script>
+
+
+</body>
+
+</html>

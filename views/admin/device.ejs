@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!--For Fa Fa icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+  <link rel="stylesheet" type="text/css" href="/css/device.css" />
+  <link rel="stylesheet" type="text/css" href="/css/employee_addemployee.css" />
+
+  <title>Devices</title>
+</head>
+
+<body>
+  <%- include('../layout/nav.ejs', {title: 'Device'}) %>
+
+
+  <section>
+    <div class="scrollable">
+      <div class="container-device">
+
+        <!-- <div class="row">
+        <div class='col-lg-2 col-md-6 col-sm-6 col-xs-12'>
+          <a class="device-list" href="#!">
+            <div>
+              <i class="material-icons device-icon">perm_device_information</i>
+              <div class="device-name">Device One</div>
+
+              <div class="device-active">
+                <p>Active</p>
+              </div>
+
+            </div>
+
+          </a>
+
+        </div>
+        <div class='col-lg-2 col-md-6 col-sm-6 col-xs-12'>
+          <a class="device-list" href="#!">
+            <div>
+              <i class="material-icons device-icon">perm_device_information</i>
+              <div class="device-name">Device One</div>
+
+              <div class="device-active">
+                <p>Active</p>
+              </div>
+
+            </div>
+
+          </a>
+        </div>
+
+        <div class='col-lg-2 col-md-6 col-sm-6 col-xs-12'>
+          <a class="device-list" href="#!">
+            <div>
+              <i class="material-icons device-icon">perm_device_information</i>
+              <div class="device-name">Device One</div>
+
+              <div class="device-active">
+                <p>Active</p>
+              </div>
+
+            </div>
+
+          </a>
+        </div>
+        <div class='col-lg-2 col-md-6 col-sm-6 col-xs-12'>
+          <a class="device-list" href="#!">
+            <div>
+              <i class="material-icons device-icon">perm_device_information</i>
+              <div class="device-name">Device One</div>
+
+              <div class="device-active">
+                <p>Active</p>
+              </div>
+
+            </div>
+
+          </a>
+        </div>
+        <div class='col-lg-2 col-md-6 col-sm-6 col-xs-12'>
+          <a class="device-list" href="#!">
+            <div>
+              <i class="material-icons device-icon">perm_device_information</i>
+              <div class="device-name">Device One</div>
+
+              <div class="device-active">
+                <p>Active</p>
+              </div>
+
+            </div>
+
+          </a>
+        </div> -->
+
+
+
+
+
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="scrollable">
+      <div class="container-device">
+
+        <div class="inactive-devices">
+          <table class="centered card">
+            <thead>
+              <tr>
+                <th>S.N.</th>
+                <th>Device Name</th>
+                <th>MAC Address</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!-- <tr>
+                <td>1</td>
+                <td>Device One</td>
+                <td>D4-BE-D8-9D-47-9A</td>
+                <td>Inactive</td>
+                </tr>
+                <tr> -->
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="add-employee">
+          <button data-target="addDeviceForm" class="btn-floating btn-large waves-effect waves-light modal-trigger add">
+            <i class="material-icons">add</i>
+          </button>
+        </div>
+
+
+        <!-- ----------------Add Devices-------------- -->
+        <div class="modal">
+          <div class="modal-content">
+            <form id="addDeviceForm">
+              <span class="modal-close btn-flat">&times;</span>
+              <h1>Company</h1>
+              <p id="info" style="
+                font-size: 15px;
+                margin-bottom: 15px;
+                font-family: sans-serif;
+              ">
+                Add the devices.
+              </p>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder="" type="text" id="name" name="name" required class="validate" />
+                  <label style="font-size: 25px;" for="name">Device Name</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input placeholder=" " id="macaddress" name="macaddress" type="text" required class="validate" />
+                  <label style="font-size: 25px;" for="macaddress">MAC Address</label>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <select name="status" id="status">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                  </select>
+                  <label style="font-size: 17px;">Status</label>
+                </div>
+              </div>
+
+              <input type="hidden" id="deviceID" name="deviceID" />
+
+              <button class="btn-floating btn-large waves-effect waves-light add" id="btnAdd">
+                Add Device
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, options);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems, options);
+    });
+
+    var elem = document.querySelector('.collapsible.expandable');
+    var instance = M.Collapsible.init(elem, {
+      accordion: false
+    });
+  </script> -->
+
+  <script src="/js/nav.js"></script>
+  <script src="/js/adddevice.js"></script>
+
+
+</body>
+
+</html>

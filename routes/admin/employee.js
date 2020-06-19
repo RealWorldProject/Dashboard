@@ -18,7 +18,4 @@ router.get("/delete-employee/:employeeID", employeeController.deleteEmployee);
 // edit employee
 router.post("/update-employee", employeeController.postUpdateEmployee);
 
-//search routes
-router.post("/search-employee", employeeController.postSearchEmployee);
-
 module.exports = router;
