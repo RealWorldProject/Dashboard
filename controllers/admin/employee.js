@@ -69,3 +69,12 @@ exports.postUpdateEmployee = async (req, res, next) => {
   }
   res.status(200).json(data);
 };
+exports.postSearchEmployee = async (req, res) => {
+  console.log("Inside");
+  console.log(req.body.searchTerm);
+  const searchTerm = req.body.searchTerm;
+  var employeeRes = await Employee.find({
+    name: RegExp(searchTerm, "i"),
+  });
+  res.status(200).json(employeeRes);
+};
