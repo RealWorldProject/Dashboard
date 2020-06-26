@@ -63,7 +63,6 @@ empForm.onsubmit = async (e) => {
     empForm[0].value = "";
     empForm[1].value = "";
     empForm[2].value = "";
-
   }
 
   // let test = await addEmployee.json();
@@ -94,7 +93,7 @@ window.onload = () => {
 
 const addToEmpTable = (employees) => {
   let html = "";
-  let sn = 1;
+  let sn = (pageNumber - 1) * empPerPage + 1;
   for (const employee of employees) {
     html += `
     <tr class ="row${employee._id}">
@@ -149,7 +148,8 @@ const editEmployee = () => {
 
       document.getElementById("addEmployeeForm").style.display = "block";
       btnAdd.innerText = "Update Employee";
-      info.textContent = "Use this form to update the employee details. All details are required.";
+      info.textContent =
+        "Use this form to update the employee details. All details are required.";
       allEmployees();
     });
   });
@@ -173,39 +173,39 @@ document.querySelector(".previous").addEventListener("click", () => {
   pageNumber--;
 
   allEmployees();
-  sn--;
 });
 document.querySelector(".next").addEventListener("click", () => {
   pageNumber++;
   allEmployees();
 });
 
+const searchEmp = async () => {
+  const data = {
+    searchTerm: document.querySelector("#search").value,
+  };
+  let allEmployees = await fetch(
+    "http://localhost:5000/admin/employee/search-employee",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
+  allEmployees = await allEmployees.json();
+  addToEmpTable(allEmployees);
 
-// search
-// const searchEmp = async () => {
-//   const data = {
-//     searchTerm: document.querySelector("#search").value,
-//   };
-//   let allEmployees = await fetch(
-//     "http://localhost:5000/admin/employee/search-employee",
-//     {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(data),
-//     }
-//   );
-//   allEmployees = await allEmployees.json();
-//   addToEmpTable(allEmployees);
+  removeEmployee();
 
-//   removeEmployee();
+  editEmployee();
+  checkPagination();
+};
 
-//   editEmployee();
-// };
+document.querySelector("#search").addEventListener("keyup", () => {
+  searchEmp();
 
-// document
-//   .querySelector(".search")
-//   .addEventListener("click", () => {
-//     searchEmp();
-//   });
+  if (document.querySelector("#search").value < 1) {
+    allEmployees();
+  }
+});
