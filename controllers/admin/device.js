@@ -56,3 +56,12 @@ exports.postUpdateDevice = async (req, res) => {
 	}
 	res.status(200).json(data);
 };
+exports.postSearchDevice = async (req, res) => {
+	console.log("Inside");
+	console.log(req.body.searchTerm);
+	const searchTerm = req.body.searchTerm;
+	var deviceRes = await Device.find({
+	  name: RegExp(searchTerm, "i"),
+	});
+	res.status(200).json(deviceRes);
+  };
