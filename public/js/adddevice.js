@@ -152,3 +152,34 @@ const editDevice = () => {
 		});
 	});
 };
+
+const searchDev = async () => {
+	const data = {
+	  searchTerm: document.querySelector("#search").value,
+	};
+	let allDevices = await fetch(
+	  "http://localhost:5000/admin/device/search-device",
+	  {
+		method: "POST",
+		headers: {
+		  "Content-Type": "application/json",
+		},
+		body: JSON.stringify(data),
+	  }
+	);
+	allDevices = await allDevices.json();
+	addToDevTable(allDevices);
+  
+	removeDevice();
+  
+	editDevice();
+  };
+  
+  document.querySelector("#search").addEventListener("keyup", () => {
+	searchDev();
+  
+	if (document.querySelector("#search").value < 1) {
+		allDevices();
+	}
+  });
+  

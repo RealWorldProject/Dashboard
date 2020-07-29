@@ -18,4 +18,7 @@ router.get("/delete-device/:deviceID", deviceController.deleteDevice);
 // edit device
 router.post("/update-device", deviceController.postUpdateDevice);
 
+//search routes
+router.post("/search-device", deviceController.postSearchDevice);
+
 module.exports= router;
