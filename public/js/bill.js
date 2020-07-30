@@ -1,34 +1,34 @@
-document.addEventListener('DOMContentLoaded', function () {
-	var elems = document.querySelectorAll('.modal');
+document.addEventListener("DOMContentLoaded", function () {
+	var elems = document.querySelectorAll(".modal");
 	var instances = M.Modal.init(elems, {});
 });
 
-const grandTotal = document.querySelector('#grandTotal');
-const amountPaid = document.querySelector('#amountPaid');
-const billGrandTotal = document.querySelector('#billGrandTotal');
-const billPaid = document.querySelector('#billPaid');
-const billDue = document.querySelector('#billDue');
+const grandTotal = document.querySelector("#grandTotal");
+const amountPaid = document.querySelector("#amountPaid");
+const billGrandTotal = document.querySelector("#billGrandTotal");
+const billPaid = document.querySelector("#billPaid");
+const billDue = document.querySelector("#billDue");
 calculateTotal();
 // Data stuffs
 function calculateTotal() {
 	let totalPrice = 0;
 	document
-		.querySelectorAll('.devicetable tbody #prodTotal')
+		.querySelectorAll(".devicetable tbody #prodTotal")
 		.forEach((prod) => {
 			totalPrice += parseInt(prod.innerText);
 		});
 	grandTotal.value = totalPrice;
 }
 
-amountPaid.addEventListener('keydown', () => {
-	amountPaid.classList.remove('error');
+amountPaid.addEventListener("keydown", () => {
+	amountPaid.classList.remove("error");
 });
 
 // for checkout
-const checkout = document.querySelector('.checkout');
+const checkout = document.querySelector(".checkout");
 
-checkout.addEventListener('click', async () => {
-	let url = window.location.href.split('/');
+checkout.addEventListener("click", async () => {
+	let url = window.location.href.split("/");
 	const deviceID = url[url.length - 1];
 	const data = {
 		deviceID: deviceID,
@@ -36,11 +36,11 @@ checkout.addEventListener('click', async () => {
 		paid: amountPaid.value,
 	};
 	let billData = await fetch(
-		'http://localhost:5000/billing/device-dashboard/checkout',
+		"http://localhost:5000/billing/device-dashboard/checkout",
 		{
-			method: 'POST',
+			method: "POST",
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(data),
 		}
@@ -55,8 +55,8 @@ const updateCheckoutModal = async (billID) => {
 	);
 	data = await data.json();
 	console.log(data);
-	const billTable = document.querySelector('.billTable tbody');
-	let html = '';
+	const billTable = document.querySelector(".billTable tbody");
+	let html = "";
 	let sn = 1;
 	data.products.forEach((product) => {
 		html += `
@@ -71,7 +71,7 @@ const updateCheckoutModal = async (billID) => {
 	});
 	billTable.innerHTML = html;
 	billGrandTotal.innerText = data.totalPrice;
-	document.querySelector('.billNumber').innerText = data._id;
+	document.querySelector(".billNumber").innerText = data._id;
 	billPaid.innerText = data.paid == null ? 0 : data.paid;
 	let due = parseInt(billGrandTotal.innerText) - parseInt(billPaid.innerText);
 	due = due > 0 ? due : 0;
@@ -80,18 +80,22 @@ const updateCheckoutModal = async (billID) => {
 
 // Remove
 function toRemove() {
-	const removeBtn = document.querySelectorAll('.removebtn');
+	const removeBtn = document.querySelectorAll(".removebtn");
 	removeBtn.forEach((btn) => {
-		btn.addEventListener('click', async (e) => {
-			let url = window.location.href.split('/');
+		btn.addEventListener("click", async (e) => {
+			let url = window.location.href.split("/");
 			const deviceID = url[url.length - 1];
-			const data = { productID: e.target.value, deviceID: deviceID };
+			const data = {
+				productID: e.target.parentElement.value,
+				deviceID: deviceID,
+			};
+			console.log(e.target);
 			let billData = await fetch(
-				'http://localhost:5000/billing/device-dashboard/delete',
+				"http://localhost:5000/billing/device-dashboard/delete",
 				{
-					method: 'POST',
+					method: "POST",
 					headers: {
-						'Content-Type': 'application/json',
+						"Content-Type": "application/json",
 					},
 					body: JSON.stringify(data),
 				}
