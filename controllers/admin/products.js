@@ -1,21 +1,22 @@
-const Product = require('../../models/Product');
+const Product = require("../../models/Product");
 
 exports.getProductPage = (req, res) => {
-	res.render('../views/admin/products');
+	const { username, access } = req.session.user;
+	res.render("../views/admin/products", { username, access });
 };
 
 exports.postAddProduct = async (req, res) => {
 	const name = req.body.name;
 	const price = parseInt(req.body.price);
 	const qty = parseInt(req.body.qty);
-	const category = req.body.category;
+	const barcode = req.body.barcode;
 	const data = {
 		name,
 		price,
 		qty,
-		category,
+		barcode,
 	};
-	const product = new Product({ name, price, qty, category });
+	const product = new Product({ name, price, qty, barcode });
 	try {
 		await product.save();
 	} catch (err) {
