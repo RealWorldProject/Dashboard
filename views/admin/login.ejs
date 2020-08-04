@@ -28,17 +28,23 @@
                         <img src="image/avatar.png" id="avatar" alt="">
                     </div>
                     <h4 class="black-text">Membership Login</h4>
+                    <% if (errorMsg.length > 0) { %>
+                    <div class="alert">
+                        <%= errorMsg %>
+                        <i class="material-icons" onclick="this.parentElement.style.display='none'">clear</i>
+                    </div>
+                    <% } %>
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
-                            <input class="validate" type="text" name="username" id="username">
+                            <input class="validate" type="text" name="username" id="username" required>
                             <label for="username" data-error="Username is incorrect">Username</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">lock</i>
-                            <input class="validate" type="password" name="password" id="password">
+                            <input class="validate" type="password" name="password" id="password" required>
                             <label for="password" data-error="Password is incorrect">Password</label>
                         </div>
                     </div>
@@ -58,6 +64,11 @@
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        function closeAlert() {
+            document.querySelector('.alert').style.display = "none";
+        }
+    </script>
 </body>
 
 </html>

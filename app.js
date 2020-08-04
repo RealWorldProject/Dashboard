@@ -5,6 +5,8 @@ const connectDB = require("./utils/db");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 
+const flash = require("connect-flash");
+
 const app = express();
 app.set("view engine", "ejs");
 
@@ -26,6 +28,10 @@ app.use(
 		store: store,
 	})
 );
+
+//for flash msg
+app.use(flash());
+
 // Defining Routes
 
 // routes for auth
