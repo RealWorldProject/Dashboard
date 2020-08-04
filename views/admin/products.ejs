@@ -24,7 +24,7 @@
 </head>
 
 <body>
-  <%- include('../layout/nav.ejs', {title: 'Product'}) %>
+  <%- include('../layout/nav.ejs', {title: 'Product', username, access}) %>
   <div class="container-product">
     <div class="card">
       <table class="striped centered table">
@@ -34,7 +34,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Category</th>
+            <th>Barcode</th>
             <th>Action</th>
 
           </tr>
@@ -82,16 +82,14 @@
               <label style="font-size:25px" for="qty">Product Quantity</label>
             </div>
           </div>
-
           <div class="row">
             <div class="input-field col s12">
-              <select name="category" id="category">
-                <option value="Food">Food</option>
-                <option value="Electronics">Electronics</option>
-              </select>
-              <label style="font-size:17px">Category</label>
+              <input placeholder="" id="barcode" name="barcode" type="number" required class="validate">
+              <label style="font-size:25px" for="barcode">Barcode</label>
             </div>
           </div>
+
+
 
           <input type="hidden" id="productID" name="productID" />
 

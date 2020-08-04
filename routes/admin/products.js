@@ -3,14 +3,19 @@ const express = require("express");
 const router = express.Router();
 
 const productController = require("../../controllers/admin/products");
+const checkAuth = require("../../utils/check-auth");
 
-router.get("/", productController.getProductPage);
+router.get("/", checkAuth.adminAuth, productController.getProductPage);
 
 //add product
 router.post("/add-product", productController.postAddProduct);
 
 //get all product
-router.get("/all-product", productController.getAllProduct);
+router.get(
+	"/all-product",
+	checkAuth.adminAuth,
+	productController.getAllProduct
+);
 
 // delete product
 router.get("/delete-product/:productID", productController.deleteProduct);

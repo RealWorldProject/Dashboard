@@ -1,12 +1,13 @@
-const Device = require('../../models/Device');
+const Device = require("../../models/Device");
 
 exports.getDevicePage = (req, res) => {
-	res.render('../views/admin/device');
+	const { username, access } = req.session.user;
+	res.render("../views/admin/device", { username, access });
 };
 
 exports.postAddDevice = async (req, res) => {
 	const { name, macaddress } = req.body;
-	let status = req.body.active == 'Active' ? true : false;
+	let status = req.body.active == "Active" ? true : false;
 	const data = {
 		name,
 		macaddress,
@@ -37,7 +38,7 @@ exports.deleteDevice = async (req, res) => {
 
 exports.postUpdateDevice = async (req, res) => {
 	const { name, macaddress, deviceID } = req.body;
-	let active = req.body.active == 'Active' ? true : false;
+	let active = req.body.active == "Active" ? true : false;
 	const data = {
 		name,
 		macaddress,
@@ -61,7 +62,7 @@ exports.postSearchDevice = async (req, res) => {
 	console.log(req.body.searchTerm);
 	const searchTerm = req.body.searchTerm;
 	var deviceRes = await Device.find({
-	  name: RegExp(searchTerm, "i"),
+		name: RegExp(searchTerm, "i"),
 	});
 	res.status(200).json(deviceRes);
-  };
+};

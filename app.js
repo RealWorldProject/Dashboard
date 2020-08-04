@@ -2,6 +2,8 @@ const express = require("express");
 const PORT = 5000;
 const MONGODBURI = "mongodb://localhost:27017/Dashboard";
 const connectDB = require("./utils/db");
+const session = require("express-session");
+const MongoDBStore = require("connect-mongodb-session")(session);
 
 const app = express();
 app.set("view engine", "ejs");
@@ -11,6 +13,19 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static("public"));
 
+const store = new MongoDBStore({
+	uri: MONGODBURI,
+	collection: "sessions",
+});
+
+app.use(
+	session({
+		secret: "this app",
+		resave: false,
+		saveUninitialized: false,
+		store: store,
+	})
+);
 // Defining Routes
 
 // routes for auth

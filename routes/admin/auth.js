@@ -4,7 +4,6 @@ const Employee = require("../../models/Employee");
 const Router = express.Router();
 
 Router.get("/", (req, res) => {
-	console.log("ballla");
 	res.render("admin/login");
 });
 
@@ -12,13 +11,24 @@ Router.post("/login", async (req, res) => {
 	const { username, password } = req.body;
 	try {
 		const user = await Employee.findOne({ username });
-		if (user.password === password)
-			return res.redirect("/billing/device-dashboard");
+		if (!user) return res.redirect("/");
+		if (user.password === password) {
+			req.session.isLoggedIn = true;
+			req.session.user = user;
+			if (user.access) return res.redirect("/admin/product");
+			else return res.redirect("/billing/device-dashboard");
+		}
 		// password incorrect
-		return res.redirect("/login");
+		return res.redirect("/");
 	} catch (err) {
 		console.log(err);
 	}
+});
+
+Router.post("/logout", (req, res) => {
+	req.session.destroy((err) => {
+		res.redirect("/");
+	});
 });
 
 module.exports = Router;

@@ -1,154 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!--For Fa Fa icons-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="/css/nav.css" />
-    <link rel="stylesheet" type="text/css" href="/css/employees.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/css/employee_addemployee.css"
-    />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
-    <title>Employees</title>
-  </head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!--For Fa Fa icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" type="text/css" href="/css/employees.css" />
+  <link rel="stylesheet" type="text/css" href="/css/employee_addemployee.css" />
 
-  <body>
-    <%- include('../layout/nav.ejs', {title: 'Employee'}) %>
+  <title>Employees</title>
+</head>
 
-    <div class="container-employee">
-      <div class="card">
-        <table class="striped centered">
-          <thead>
-            <tr>
-              <th>S.N</th>
-              <th>Full Name</th>
-              <th>Username</th>
-              <th>Password</th>
-              <th>Access</th>
-              <th>Action</th>
-            </tr>
-          </thead>
+<body>
+  <%- include('../layout/nav.ejs', {title: 'Employee', username, access}) %>
 
-          <tbody></tbody>
-        </table>
-      </div>
+  <div class="container-employee">
+    <div class="card">
+      <table class="striped centered">
+        <thead>
+          <tr>
+            <th>S.N</th>
+            <th>Full Name</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Access</th>
+            <th>Action</th>
+          </tr>
+        </thead>
 
-      <div class="pagination">
-        <a class="waves-effect waves-light btn previous">Previous</a>
-        <a class="waves-effect waves-light btn next">Next</a>
-      </div>
+        <tbody></tbody>
+      </table>
+    </div>
 
-      <div class="add-employee">
-        <button
-          data-target="addEmployeeForm"
-          class="btn-floating btn-large waves-effect waves-light modal-trigger add"
-        >
-          <i class="material-icons">add</i>
-        </button>
-      </div>
+    <div class="pagination">
+      <a class="waves-effect waves-light btn previous">Previous</a>
+      <a class="waves-effect waves-light btn next">Next</a>
+    </div>
 
-      <!-- ----------------Add Employes-------------- -->
-      <div class="modal">
-        <div class="modal-content">
-          <form id="addEmployeeForm">
-            <span class="modal-close btn-flat">&times;</span>
-            <h1>Company</h1>
-            <p id="info"
-              style="
+    <div class="add-employee">
+      <button data-target="addEmployeeForm" class="btn-floating btn-large waves-effect waves-light modal-trigger add">
+        <i class="material-icons">add</i>
+      </button>
+    </div>
+
+    <!-- ----------------Add Employes-------------- -->
+    <div class="modal">
+      <div class="modal-content">
+        <form id="addEmployeeForm">
+          <span class="modal-close btn-flat">&times;</span>
+          <h1>Company</h1>
+          <p id="info" style="
                 font-size: 15px;
                 margin-bottom: 15px;
                 font-family: sans-serif;
-              "
-            >
-              Create a new employee using this form. Fill them all.
-            </p>
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  placeholder=""
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  class="validate"
-                />
-                <label style="font-size: 25px;" for="name">Full Name</label>
-              </div>
+              ">
+            Create a new employee using this form. Fill them all.
+          </p>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="" type="text" id="name" name="name" required class="validate" />
+              <label style="font-size: 25px;" for="name">Full Name</label>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  placeholder=" "
-                  id="username"
-                  name="username"
-                  type="text"
-                  required
-                  class="validate"
-                />
-                <label style="font-size: 25px;" for="username">Username</label>
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder=" " id="username" name="username" type="text" required class="validate" />
+              <label style="font-size: 25px;" for="username">Username</label>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  placeholder=""
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  class="validate"
-                />
-                <label style="font-size: 25px;" for="password">Password</label>
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="" id="password" name="password" type="password" required class="validate" />
+              <label style="font-size: 25px;" for="password">Password</label>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <select name="access" id="access">
-                  <option value="Food">Admin</option>
-                  <option value="Electronics">Editor</option>
-                </select>
-                <label style="font-size: 17px;">Access</label>
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <select name="access" id="access">
+                <option value="Food">Admin</option>
+                <option value="Electronics">Editor</option>
+              </select>
+              <label style="font-size: 17px;">Access</label>
             </div>
+          </div>
 
-            <input type="hidden" id="employeeID" name="employeeID" />
+          <input type="hidden" id="employeeID" name="employeeID" />
 
-            <button
-              class="btn-floating btn-large waves-effect waves-light add"
-              id="btnAdd"
-            >
-              Add Employee
-            </button>
-          </form>
-        </div>
+          <button class="btn-floating btn-large waves-effect waves-light add" id="btnAdd">
+            Add Employee
+          </button>
+        </form>
       </div>
-      <!-- ----------------Employee form close-------------- -->
     </div>
+    <!-- ----------------Employee form close-------------- -->
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="/js/nav.js"></script>
-    <script src="/js/addemployee.js"></script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/addemployee.js"></script>
+</body>
+
 </html>
