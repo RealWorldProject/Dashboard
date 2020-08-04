@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <title>Login</title>
+</head>
+
+<body>
+    <main>
+
+        <div class="container center-align">
+            <div class="z-depth-2  grey lighten-4 row" id="login-box">
+                <form class="col s12" method="POST" action="/login">
+                    <div class="section"></div>
+                    <div class="row">
+                        <img src="image/avatar.png" id="avatar" alt="">
+                    </div>
+                    <h4 class="black-text">Membership Login</h4>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input class="validate" type="text" name="username" id="username">
+                            <label for="username" data-error="Username is incorrect">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input class="validate" type="password" name="password" id="password">
+                            <label for="password" data-error="Password is incorrect">Password</label>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class='row center-align'>
+                        <button id="btnlogin" type='submit' name='btn_login'
+                            class='col s12 btn btn-large waves-effect indigo accent-4 white-text'>Login</button>
+                    </div>
+
+                    <div class="section"></div>
+                    <div class="section"></div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
