@@ -48,6 +48,9 @@ app.use("/admin/device", require("./routes/admin/device"));
 
 app.use("/billing/device-dashboard", require("./routes/billing"));
 
+// for screen
+app.use("/screen", require("./routes/screen"));
+
 // for adding a main admin user
 const addUser = require("./add-main-user");
 // connecting DB
