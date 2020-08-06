@@ -24,9 +24,46 @@
 <body>
   <%- include('../layout/nav.ejs', {title: 'Device', username, access}) %>
 
-
   <section>
+    <div class="status">
+      <h5>Status</h5>
+      <div class="row card ">        
+        <div class="col s11 ">          
+          <div class="stat col s3 m3 center-align">
+            <a href="#" class="text">Total</a>
+            <a href="#">
+              <h4><i class="material-icons prefix" id="total">fiber_manual_record</i>2</h4>
+            </a>
+          </div>
+          <div class="stat col s3 m3 center-align">
+            <a href="#" class="text">Active</a>
+            <a href="#">
+              <h4><i id="active" class="material-icons prefix">fiber_manual_record</i>2</h4>
+          </div>
+          <div class="stat col s3 m3 center-align">
+            <a href="#" class="text">Offline</a>
+            <a href="#">
+              <h4><i class="material-icons prefix"id="offline">fiber_manual_record</i>2</h4>
+          </a>
+          </div>
+          <div class="stat col s3 m3 center-align">
+            <a href="#" class="text">Alert</a>
+            <a href="#">
+              <h4><i class="material-icons prefix"id="alert">fiber_manual_record</i>2</h4>
+            </a>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <section>
+    
     <div class="scrollable">
+      
       <div class="container-device">
 
         <!-- <div class="row">
@@ -116,7 +153,7 @@
   <section>
     <div class="scrollable">
       <div class="container-device">
-
+        <h5>Device List</h5>
         <div class="inactive-devices">
           <table class="centered card">
             <thead>
