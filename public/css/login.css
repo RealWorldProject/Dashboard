@@ -1,73 +1,80 @@
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  background-image: url(../image/2.png);
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	background-image: url(../image/2.png);
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 main {
-  flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 
 .blue-text {
-  color: #0043ff !important;
+	color: #0043ff !important;
 }
 h4 {
-  margin-top: 0px;
-  font-weight: 400;
-  /* margin-bottom: 20px; */
+	margin-top: 0px;
+	font-weight: 400;
+	/* margin-bottom: 20px; */
 }
 /* .blue {
   color: #0043ff !important;
 } */
 
 #btnlogin {
-  margin-bottom: 8px;
+	margin-bottom: 8px;
 }
 #avatar {
-  width: 150px;
+	width: 150px;
 }
 
 #login-box .input-field input[type="text"]:focus + label,
 #login-box .input-field input[type="password"]:focus + label {
-  color: #0043ff;
+	color: #0043ff;
 }
 #login-box .input-field input[type="text"]:focus,
 #login-box .input-field input[type="password"]:focus {
-  border-bottom: 2px solid #0043ff !important;
+	border-bottom: 2px solid #0043ff !important;
 }
 /* Valid color */
 #login-box .input-field input[type="text"].valid,
 #login-box .input-field input[type="password"].valid {
-  border-bottom: 2px solid #0043ff;
-  box-shadow: none;
+	border-bottom: 2px solid #0043ff;
+	box-shadow: none;
 }
 /* invalid color */
 #login-box .input-field input[type="text"].invalid,
 #login-box .input-field input[type="password"].invalid {
-  border-bottom: 2px solid rgb(255, 0, 0);
-  box-shadow: none;
+	border-bottom: 2px solid rgb(255, 0, 0);
+	box-shadow: none;
 }
 #login-box .prefix.active {
-  color: #0043ff;
+	color: #0043ff;
 }
 
 .col .row {
-  margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 
 #login-box {
-  display: inline-block;
-  padding: 32px 48px 0px 48px;
-  border: 1px;
-  margin-top: 15%;
-  border-radius: 5px;
+	display: inline-block;
+	padding: 32px 48px 0px 48px;
+	border: 1px;
+	margin-top: 15%;
+	border-radius: 5px;
 }
 .alert {
-  background-color: #0043ff;
-  height: 30px;
-  box-shadow: 14px 13px 17px 0px rgba(0, 0, 0, 0.75);
+	background-color: #0043ff;
+	height: 40px;
+	box-shadow: 14px 13px 17px 0px rgba(0, 0, 0, 0.75);
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.alert i {
+	background-color: white;
 }
