@@ -1,144 +1,145 @@
 /* ------============= Search Bar =========--------------- */
 * {
-	font-family: "Poppins";
+  font-family: "Poppins";
 }
 .nav-wrapper {
-	background-color: #0043ff;
-	height: 56px;
+  background-color: #0043ff;
+  height: 56px;
 }
 #search-field {
-	background-color: rgb(107, 146, 252);
-	float: right;
-	width: 22%;
-	height: 70%;
-	border-radius: 2px;
-	margin-right: 20px;
-	margin-top: 9px;
-	/* margin-bottom: 20px; */
+  background-color: rgb(107, 146, 252);
+  float: right;
+  width: 22%;
+  height: 70%;
+  border-radius: 2px;
+  margin-right: 20px;
+  margin-top: 9px;
+  /* margin-bottom: 20px; */
 }
 #search {
-	margin-top: 5px;
-	font-size: 16px;
-	background-color: rgb(107, 146, 252) !important;
+  margin-top: 5px;
+  font-size: 16px;
+  background-color: rgb(107, 146, 252) !important;
 }
 .nav-wrapper .input-field input[type="search"] {
-	background-color: rgb(107, 146, 252) !important;
-	height: inherit;
-	padding-left: 4rem;
-	width: calc(100% - 4rem);
-	border: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
+  background-color: rgb(107, 146, 252) !important;
+  height: inherit;
+  padding-left: 4rem;
+  width: calc(100% - 4rem);
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 #search::placeholder {
-	color: rgb(231, 231, 231);
-	opacity: 0.8;
+  color: rgb(231, 231, 231);
+  opacity: 0.8;
 }
 nav i.material-icons {
-	line-height: 42px;
+  line-height: 42px;
 }
 
 nav,
 nav .nav-wrapper i,
 nav a.sidenav-trigger,
 nav a.sidenav-trigger i {
-	height: 56px;
-	line-height: 43px;
+  height: 56px;
+  line-height: 43px;
 }
 
 /* ---------=============== nav header ===============------------- */
 #header {
-	margin-left: 305px;
-	margin-top: 7px;
-	font-size: 28px;
+  margin-left: 305px;
+  margin-top: 7px;
+  font-size: 28px;
 }
 /* ------------============== sidenav=============----------- */
 .sidenav {
-	width: 270px;
+  width: 270px;
 }
 #logo-text {
-	color: #0043ff;
-	font-size: 28px;
-	margin-top: 4px;
+  color: #0043ff;
+  font-size: 28px;
+  margin-top: 4px;
 
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .sidenav .divider {
-	margin: 2px 0 0 0;
-	width: 92%;
-	height: 2px;
-	margin-left: 10px;
-	background-color: white;
-	border-bottom: 1px solid #a7a7a7;
+  margin: 2px 0 0 0;
+  width: 92%;
+  height: 2px;
+  margin-left: 10px;
+  background-color: white;
+  border-bottom: 1px solid #a7a7a7;
 }
 #dashboard {
-	margin-left: 30px;
-	color: #797979;
-	font-size: 14px;
-	font-weight: bolder;
-	text-transform: uppercase;
+  margin-left: 30px;
+  color: #797979;
+  font-size: 14px;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 .content li > a > i.material-icons {
-	color: black;
+  color: black;
 }
 .content li.active {
-	background-color: rgb(223, 223, 255);
+  background-color: rgb(223, 223, 255);
 }
 .content li:hover {
-	background-color: rgb(240, 241, 255);
+  background-color: rgb(240, 241, 255);
 }
 
 /* collaps */
 .container .collapsible img {
-	width: 60px;
-	height: 60px;
-	margin-top: 7px;
+  width: 60px;
+  height: 60px;
+  margin-top: 7px;
 }
 
 .name {
-	margin-top: 0px;
-	margin-left: 20px !important;
+  margin-top: 0px;
+  margin-left: 20px !important;
 }
 .name p {
-	margin-top: 0px;
-	height: 10px;
-	font-size: 13px;
-	color: #797979;
+  margin-top: 0px;
+  height: 10px;
+  font-size: 13px;
+  color: #797979;
 }
 .name strong {
-	font-size: 15px;
-	font-weight: bold;
+  font-size: 15px;
+  font-weight: bold;
 }
 .arrow {
-	margin-top: 12px;
-	color: #666565;
+  margin-top: 12px;
+  color: #666565;
 }
 .row .col.s6 {
-	width: 50%;
-	margin-bottom: 0px;
+  width: 50%;
+  margin-bottom: 0px;
 }
 .sidenav .collapsible-header,
 .sidenav.fixed .collapsible-header {
-	height: 70px;
+  height: 70px;
 
-	margin-bottom: 0px;
+  margin-bottom: 0px;
 }
-.logout a {
-	width: 90%;
-	font-size: 16px;
-	color: #000000;
+.logout-button {
+  width: 90%;
+  height: 37px;
+  font-size: 16px;
+  color: #000000;
 }
 
 .change-color a,
 .change-color a i {
-	color: blue !important;
+  color: blue !important;
 }
 .logout-button {
-	background-color: Transparent;
-	background-repeat: no-repeat;
-	border: none;
-	cursor: pointer;
-	overflow: hidden;
-	outline: none;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }

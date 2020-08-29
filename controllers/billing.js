@@ -4,45 +4,44 @@ const Bill = require("../models/Bill");
 const socket = require("../socket");
 
 exports.getDevicePage = async (req, res) => {
-<<<<<<< HEAD
-	const { username, access } = req.session.user;
-	try {
-		const devices = await Device.find();
-		res.render("billing", { devices, username, access });
-	} catch (errror) {
-		console.log(errror);
-	}
-};
-
-exports.getBilling = async (req, res) => {
-	const { username, access } = req.session.user;
-	try {
-		const deviceID = req.params.deviceID;
-		const device = await Device.findById(deviceID);
-		const data = await device.cart.populate("items.product").execPopulate();
-		res.render("device-billing", { data: data.items, username, access });
-	} catch (error) {
-		console.log(error);
-	}
-=======
+  const { username, access } = req.session.user;
   try {
     const devices = await Device.find();
-    res.render("billing", { devices });
+    res.render("billing", { devices, username, access });
   } catch (errror) {
     console.log(errror);
   }
 };
 
 exports.getBilling = async (req, res) => {
+  const { username, access } = req.session.user;
   try {
     const deviceID = req.params.deviceID;
     const device = await Device.findById(deviceID);
     const data = await device.cart.populate("items.product").execPopulate();
-    res.render("device-billing", { data: data.items });
+    res.render("device-billing", { data: data.items, username, access });
   } catch (error) {
     console.log(error);
   }
->>>>>>> 27326b033e7c4b048c14968c17d329ef2f15cd30
+  // =======
+  //   try {
+  //     const devices = await Device.find();
+  //     res.render("billing", { devices });
+  //   } catch (errror) {
+  //     console.log(errror);
+  //   }
+  // };
+
+  // exports.getBilling = async (req, res) => {
+  //   try {
+  //     const deviceID = req.params.deviceID;
+  //     const device = await Device.findById(deviceID);
+  //     const data = await device.cart.populate("items.product").execPopulate();
+  //     res.render("device-billing", { data: data.items });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // >>>>>>> 27326b033e7c4b048c14968c17d329ef2f15cd30
 };
 
 exports.getAddToDevice = async (req, res, next) => {
