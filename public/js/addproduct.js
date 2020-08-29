@@ -104,8 +104,8 @@ const addToProTable = (products) => {
       <td>${product.barcode}</td>
       
       <td>
-        <button class="editbtn btn"  id="edit-${product._id}"><i class="fa fa-pencil edit" aria-hidden="true"></i></button>
-        <button class="removebtn btn" id="${product._id}" ><i class="fa fa-trash trash" aria-hidden="true"></i></button></td>
+        <button class="editbtn btn"  id="edit-${product._id}"><i class="material-icons edit">create</i></button>
+        <button class="removebtn btn" id="${product._id}" ><i class="material-icons trash">clear</i></button></td>
         </td>
 		</tr>
     `;

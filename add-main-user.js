@@ -2,7 +2,7 @@ const Employee = require("./models/Employee");
 
 const addUser = async () => {
 	try {
-		const user = await Employee.find({ username: "admin" });
+		const user = await Employee.findOne({ username: "admin" });
 		if (user != null) return;
 		const emp = new Employee({
 			name: "admin",

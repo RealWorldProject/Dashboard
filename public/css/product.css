@@ -1,36 +1,14 @@
-.container-product{
+.container-product {
 	margin-left: 300px;
 }
 body {
-	background-color: #f3f3f3;
-  }
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-table .btn,
-.btn:hover {
-  background-color: transparent;
-  box-shadow: none;
+	background-color: #dcdcdc;
 }
 
-td, th {
-  border: 2px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-th {
-	font-size: 15px;
-}
-td {
-	padding: 0px;
-  }
 .container-product .card {
 	width: 1160px;
 	margin-left: 0px;
-  }
+}
 .pagination .btn {
 	background-color: #0043ff;
 	color: aliceblue;
@@ -43,12 +21,10 @@ td {
 
 .edit {
 	font-size: 25px;
-	padding-left: 10px;
 	color: #0043ff;
 }
 .trash {
 	font-size: 25px;
-	padding-left: 10px;
 	color: red;
 }
 .pagination {
@@ -73,11 +49,31 @@ td {
 	margin-right: 110px;
 }
 .previous:hover {
-  background-color: #00c301;
+	background-color: #00c301;
 }
 .next:hover {
-  background-color: #00c301;
+	background-color: #00c301;
 }
 .add:hover {
-  background-color: #00c301;
+	background-color: #00c301;
+}
+.table-card {
+	box-shadow: 0px 0px 16px 0px;
+	width: 95%;
+}
+.btn {
+	border-radius: 50px;
+	background-color: transparent;
+	opacity: 0.9;
+	border: #0043ff 1px solid;
+	box-shadow: 0px 0px 16px 0px;
+}
+.btn:hover {
+	background-color: #0043ff;
+}
+i:hover {
+	color: white;
+}
+table {
+	background-color: white;
 }

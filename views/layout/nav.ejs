@@ -60,10 +60,14 @@
           <a class="waves-effect waves-light" href="/admin/device"><i
               class="material-icons prefix">shopping_cart</i>Device</a>
         </li>
+        <li class="tab btn-toggle change-color <%= title == 'Billing' ? "change-color active" : "" %>">
+          <a class="waves-effect waves-light" href="/billing/device-dashboard"><i
+              class="material-icons prefix">receipt</i>Billing</a>
+        </li>
         <% } else { %>
         <li class="tab btn-toggle change-color active">
           <a class="waves-effect waves-light" href="/billing/device-dashboard"><i
-              class="material-icons prefix">local_parking</i>Billing</a>
+              class="material-icons prefix">receipt</i>Billing</a>
         </li>
         <% } %>
       </ul>
