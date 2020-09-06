@@ -1,6 +1,6 @@
 /* ------============= Search Bar =========--------------- */
 * {
-	font-family: 'Poppins';
+	font-family: "Poppins";
 }
 .nav-wrapper {
 	background-color: #0043ff;
@@ -139,16 +139,11 @@ section {
 
 #lower .totalamount {
 	float: left;
-	padding: 60px;
 	font-size: 20px;
 }
 #lower .paidamount {
 	float: left;
-	padding: 60px;
 	font-size: 20px;
-}
-.checkout-btn {
-	margin-top: 57px;
 }
 
 /* -----======= model content css ========--------- */
@@ -184,4 +179,12 @@ td {
 }
 hr {
 	border: dashed 0.1px;
+}
+.lower-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-items: center;
+	position: fixed;
+	width: 80%;
+	bottom: 25px;
 }

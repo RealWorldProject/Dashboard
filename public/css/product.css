@@ -77,3 +77,8 @@ i:hover {
 table {
 	background-color: white;
 }
+.lower-section {
+	position: fixed;
+	width: 84%;
+	bottom: 25px;
+}
