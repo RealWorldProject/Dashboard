@@ -4,12 +4,12 @@ exports.getEmployeePage = (req, res) => {
   const { username, access } = req.session.user;
   res.render("../views/admin/employee", { username, access });
 };
-// exports.getEmployeePage = (req,res)=>{
-//     res.render("HELLO");
-// };
+
 exports.postAddEmployee = async (req, res) => {
   const { name, username, password } = req.body;
   let access = req.body.access == "Admin" ? true : false;
+  const emp = Employee.find({ username: username });
+  if (emp != null) return res.json({ error: "Username Taken" });
   const data = {
     name,
     username,

@@ -8,8 +8,8 @@ var instance = M.Modal.init(elem);
 
 // for pagination
 let pageNumber = 1;
-let sn = 1;
-let proPerPage = 3;
+// let sn = 1;
+let proPerPage = 5;
 //for data
 const proTableTbody = document.querySelector(".container-product tbody");
 const proForm = document.querySelector("#addProductForm");
@@ -93,7 +93,7 @@ window.onload = () => {
 
 const addToProTable = (products) => {
   let html = "";
-
+  let sn = (pageNumber - 1) * proPerPage + 1;
   for (const product of products) {
     html += `
     <tr class ="row${product._id}">

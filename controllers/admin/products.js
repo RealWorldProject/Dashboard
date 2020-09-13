@@ -28,7 +28,7 @@ exports.postAddProduct = async (req, res) => {
 exports.getAllProduct = async (req, res, next) => {
   const name = req.params.name;
   const page = req.query.page;
-  const proPerPage = 10;
+  const proPerPage = 5;
   const product = await Product.find()
     .sort({ name: 1 })
     .skip(proPerPage * (page - 1))
