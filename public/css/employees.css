@@ -85,3 +85,9 @@ td {
 .add:hover {
   background-color: #00c301;
 }
+
+.lower-section {
+  position: fixed;
+  width: 84%;
+  bottom: 25px;
+}
