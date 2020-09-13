@@ -19,34 +19,66 @@ exports.getBilling = async (req, res) => {
 		const deviceID = req.params.deviceID;
 		const device = await Device.findById(deviceID);
 		const data = await device.cart.populate("items.product").execPopulate();
+		console.log(data.items);
 		res.render("device-billing", { data: data.items, username, access });
 	} catch (error) {
 		console.log(error);
 	}
 };
 
+exports.getBillingData = async (req, res) => {
+	try {
+		const deviceID = req.params.deviceID;
+		const device = await Device.findById(deviceID);
+		const data = await device.cart.populate("items.product").execPopulate();
+		let cleanedData = data.items;
+		cleanedData = cleanedData.map((data) => {
+			return { ...data.product._doc, quantity: data.quantity };
+		});
+		res.status(200).json(cleanedData);
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 exports.getAddToDevice = async (req, res, next) => {
-	const products = await Product.find();
-	res.render("add-to-device", {
-		products,
-	});
+	try {
+		const products = await Product.find({});
+		res.render("add-to-device", {
+			products,
+		});
+	} catch (error) {
+		console.log(error.message);
+	}
 };
 
 exports.postAddToDevice = async (req, res, next) => {
-	let barcode = parseInt(req.body.barcode);
-	const deviceID = req.body.deviceID;
+	const { barcode, deviceID } = req.body;
 	try {
 		const device = await Device.findById(deviceID);
 		const product = await Product.find({ barcode: barcode });
 		console.log(product[0]._id);
 		await device.addToCart(product[0]._id);
-		res.send("done");
+		res.status(200).json(product);
 	} catch (err) {
 		console.log(err);
 		res.send("notdone");
 	}
 };
 
+exports.postAddToDeviceTest = async (req, res, next) => {
+	const { deviceID, productID } = req.body;
+	try {
+		const device = await Device.findById(deviceID);
+		const product = await Product.findById(productID);
+		console.log(product);
+		await device.addToCart(product._id);
+		res.redirect("/billing/device-dashboard/add-to-device");
+	} catch (err) {
+		console.log(err);
+		res.send("notdone");
+	}
+};
 exports.getCheckout = async (req, res, next) => {
 	// add a query to find the latest bill
 	const billID = req.params.billID;
