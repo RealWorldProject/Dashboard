@@ -11,7 +11,7 @@
     <ul>
         <% products.forEach(product => { %>
         <li>
-            <form action="/billing/device-dashboard/add-to-device" method="POST">
+            <form action="/billing/device-dashboard/add-to-device-test" method="POST">
                 <h1><%= product.name %></h1>
                 <input type="hidden" value="5eec4e02df7d5e2810a206b2" name="deviceID">
                 <input type="hidden" value="<%= product._id %>" name="productID">
