@@ -73,9 +73,11 @@ const updateCheckoutModal = async (billID) => {
 	billGrandTotal.innerText = data.totalPrice;
 	document.querySelector(".billNumber").innerText = data._id;
 	billPaid.innerText = data.paid == null ? 0 : data.paid;
-	let due = parseInt(billGrandTotal.innerText) - parseInt(billPaid.innerText);
-	due = due > 0 ? due : 0;
-	billDue.innerText = due;
+	let returnAmount =
+		parseInt(billPaid.innerText) - parseInt(billGrandTotal.innerText);
+	returnAmount =
+		returnAmount < 0 ? `Due: ${Math.abs(returnAmount)}` : returnAmount;
+	billDue.innerText = returnAmount;
 };
 
 // Remove

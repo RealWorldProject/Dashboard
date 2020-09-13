@@ -59,6 +59,8 @@ exports.postAddToDevice = async (req, res, next) => {
 		const product = await Product.find({ barcode: barcode });
 		console.log(product[0]._id);
 		await device.addToCart(product[0]._id);
+		product.qty -= 1;
+		await product.save();
 		res.status(200).json(product);
 	} catch (err) {
 		console.log(err);
@@ -73,6 +75,8 @@ exports.postAddToDeviceTest = async (req, res, next) => {
 		const product = await Product.findById(productID);
 		console.log(product);
 		await device.addToCart(product._id);
+		product.qty -= 1;
+		await product.save();
 		res.redirect("/billing/device-dashboard/add-to-device");
 	} catch (err) {
 		console.log(err);
