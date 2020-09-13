@@ -9,7 +9,7 @@ var instance = M.Modal.init(elem);
 // for pagination
 let pageNumber = 1;
 // let sn = 1;
-let empPerPage = 3;
+let empPerPage = 9;
 //for data
 const empTableTbody = document.querySelector(".container-employee tbody");
 const empForm = document.querySelector("#addEmployeeForm");
