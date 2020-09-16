@@ -1,84 +1,106 @@
 .container-product {
-	margin-left: 300px;
+  margin-left: 300px;
 }
 body {
-	background-color: #dcdcdc;
+  background-color: #f3f3f3;
 }
 
 .container-product .card {
-	width: 1160px;
-	margin-left: 0px;
+  width: 1190px;
+  margin-left: 0px;
 }
 .pagination .btn {
-	background-color: #0043ff;
-	color: aliceblue;
+  background-color: #0043ff;
+  color: aliceblue;
 }
 
-.add-employee .btn-floating {
-	background-color: #0043ff;
-	color: aliceblue;
+.add-product .btn-floating {
+  background-color: #0043ff;
+  color: aliceblue;
 }
 
 .edit {
-	font-size: 25px;
-	color: #0043ff;
+  font-size: 15px;
+  border-radius: 50%;
+  background-color: #0043ff;
+  /* padding-left: 5px; */
+  color: #ffffff;
+  width: 36px;
 }
 .trash {
-	font-size: 25px;
-	color: red;
+  font-size: 15px;
+  border-radius: 50%;
+  background-color: red;
+  /* padding-left: 5px; */
+  color: rgb(255, 255, 255);
+  width: 36px;
 }
 .pagination {
-	margin-top: 30px;
-	margin-left: 35px;
-	float: left;
+  margin-top: 30px;
+  margin-left: 35px;
+  float: left;
 }
 .previous {
-	background-color: #0043ff;
+  background-color: #0043ff;
 }
 .next {
-	background-color: #0043ff;
-	margin-left: 10px;
+  background-color: #0043ff;
+  margin-left: 10px;
 }
 .add {
-	background-color: #0043ff;
+  background-color: #0043ff;
 }
 
 .add-product {
-	float: right;
-	margin-top: 20px;
-	margin-right: 110px;
+  float: right;
+  margin-top: 30px;
+  margin-right: 110px;
 }
 .previous:hover {
-	background-color: #00c301;
+  background-color: #00c301 !important;
 }
 .next:hover {
-	background-color: #00c301;
+  background-color: #00c301 !important;
 }
 .add:hover {
-	background-color: #00c301;
+  background-color: #00c301;
 }
 .table-card {
-	box-shadow: 0px 0px 16px 0px;
-	width: 95%;
+  box-shadow: 0px 0px 16px 0px;
+  width: 95%;
 }
-.btn {
-	border-radius: 50px;
-	background-color: transparent;
-	opacity: 0.9;
-	border: #0043ff 1px solid;
-	box-shadow: 0px 0px 16px 0px;
-}
+/* .btn {
+  border-radius: 50px;
+  background-color: transparent;
+  opacity: 0.9;
+  border: #0043ff 1px solid;
+  box-shadow: 0px 0px 16px 0px;
+} */
+/* .btn:hover {
+  background-color: #0043ff;
+} */
+table .btn,
 .btn:hover {
-	background-color: #0043ff;
+  background-color: transparent;
+  box-shadow: none;
 }
-i:hover {
-	color: white;
-}
+
 table {
-	background-color: white;
+  background-color: white;
+}
+td,
+th {
+  border: none;
+  /* text-align: left !important; */
+}
+th {
+  font-size: 15px;
+}
+td {
+  padding: 9px;
 }
 .lower-section {
-	position: fixed;
-	width: 84%;
-	bottom: 25px;
+  position: fixed;
+  width: 84%;
+  bottom: 10px;
 }

@@ -9,7 +9,7 @@ var instance = M.Modal.init(elem);
 // for pagination
 let pageNumber = 1;
 // let sn = 1;
-let proPerPage = 5;
+let proPerPage = 9;
 //for data
 const proTableTbody = document.querySelector(".container-product tbody");
 const proForm = document.querySelector("#addProductForm");

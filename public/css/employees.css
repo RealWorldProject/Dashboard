@@ -6,9 +6,7 @@ body {
 }
 
 table {
-  border-collapse: collapse;
-  width: 98%;
-  margin-left: 10px;
+  background-color: #ffffff;
 }
 table .btn,
 .btn:hover {
@@ -25,11 +23,11 @@ th {
   font-size: 15px;
 }
 td {
-  padding: 8px;
+  padding: 9px;
 }
 .container-employee .card {
-  width: 1120px;
-  margin-left: 30px;
+  width: 1190px;
+  margin-left: 0px;
 }
 .pagination .btn {
   background-color: #0043ff;
@@ -56,7 +54,7 @@ td {
   width: 36px;
 }
 .pagination {
-  margin-top: 30px;
+  margin-top: 40px;
   margin-left: 35px;
   float: left;
 }
@@ -73,7 +71,7 @@ td {
 
 .add-employee {
   float: right;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-right: 110px;
 }
 .previous:hover {
@@ -85,9 +83,11 @@ td {
 .add:hover {
   background-color: #00c301;
 }
-
+i:hover {
+  color: white;
+}
 .lower-section {
   position: fixed;
   width: 84%;
-  bottom: 25px;
+  bottom: 10px;
 }
