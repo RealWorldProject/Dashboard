@@ -23,4 +23,7 @@ router.get("/delete-product/:productID", productController.deleteProduct);
 // edit product
 router.post("/update-product", productController.postUpdateProduct);
 
+router.get("/stat", productController.getStat);
+router.post("/stat", productController.postStat);
+
 module.exports = router;

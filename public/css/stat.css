@@ -1,0 +1,14 @@
+.container-stat {
+	margin-left: 300px;
+}
+.top {
+	display: flex;
+	width: 400px;
+	align-items: center;
+	justify-content: space-between;
+}
+.bill {
+	width: 500px;
+	border: 1px solid black;
+	margin-bottom: 5px;
+}

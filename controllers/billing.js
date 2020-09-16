@@ -2,6 +2,7 @@ const Device = require("../models/Device");
 const Product = require("../models/Product");
 const Bill = require("../models/Bill");
 const socket = require("../socket");
+const { db } = require("../models/Product");
 
 exports.getDevicePage = async (req, res) => {
 	const { username, access } = req.session.user;
@@ -97,12 +98,18 @@ exports.postCheckout = async (req, res, next) => {
 	const device = await Device.findById(deviceID);
 	const data = await device.cart.populate("items.product").execPopulate();
 	const updatedData = data.items.map((item) => {
-		return { quantity: item.quantity, product: { ...item.product._doc } };
+		return {
+			quantity: item.quantity,
+			productPrice: item.product.price,
+			productName: item.product.name,
+		};
 	});
+	const date = new Date().toISOString().slice(0, 10);
 	const bill = new Bill({
 		products: updatedData,
 		totalPrice: totalPrice,
 		paid: paid,
+		date: date,
 	});
 	await bill.save((err, savedBill) => {
 		if (err) throw err;
