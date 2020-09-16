@@ -12,9 +12,9 @@ router.post("/add-product", productController.postAddProduct);
 
 //get all product
 router.get(
-	"/all-product",
-	checkAuth.adminAuth,
-	productController.getAllProduct
+  "/all-product",
+  checkAuth.adminAuth,
+  productController.getAllProduct
 );
 
 // delete product
@@ -25,5 +25,7 @@ router.post("/update-product", productController.postUpdateProduct);
 
 router.get("/stat", productController.getStat);
 router.post("/stat", productController.postStat);
+
+router.post("/search-product", productController.postSearchProduct);
 
 module.exports = router;
