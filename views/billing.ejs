@@ -36,7 +36,7 @@
 
                             <div class="card-content">
                                 <i class="material-icons device-icon">perm_device_information</i>
-                                <div class="device-name">Device <%- device.name %> </div>
+                                <div class="device-name"><%- device.name %> </div>
                                 <a class="" href="/billing/device-dashboard/device/<%- device._id %>">Monitor</a><br>
                                 <a href="/screen/<%- device._id %>">Screen</a>
 
@@ -52,52 +52,9 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <section>
-        <div class="scrollable">
-            <div class="container-device">
-                <div class="inactive-devices">
-                    <table class="striped centered">
-                        <thead>
-                            <tr>
-                                <th>S.N.</th>
-                                <th>Device Name</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Device One</td>
-                                <td>Inactive</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Device One</td>
-                                <td>Inactive</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Device One</td>
-                                <td>Inactive</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Device One</td>
-                                <td>Inactive</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.sidenav');
       var instances = M.Sidenav.init(elems, options);
@@ -114,8 +71,8 @@
     });
   </script> -->
 
-    <script src="/js/nav.js"></script>
-    <script src="/js/adddevice.js"></script>
+        <script src="/js/nav.js"></script>
+        <script src="/js/adddevice.js"></script>
 
 
 </body>
