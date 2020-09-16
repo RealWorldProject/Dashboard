@@ -54,7 +54,6 @@ const updateCheckoutModal = async (billID) => {
 		`http://localhost:5000/billing/device-dashboard/checkout/${billID}`
 	);
 	data = await data.json();
-	console.log(data);
 	const billTable = document.querySelector(".billTable tbody");
 	let html = "";
 	let sn = 1;
@@ -62,10 +61,10 @@ const updateCheckoutModal = async (billID) => {
 		html += `
 		<tr>
 			<td>${sn}</td>
-			<td id="prodName">${product.product.name}</td>
-			<td id="prodPrice">${product.product.price}</td>
+			<td id="prodName">${product.productName}</td>
+			<td id="prodPrice">${product.productPrice}</td>
 			<td id="prodQty">${product.quantity}</td>
-			<td id="prodTotal">${product.quantity * product.product.price}</td>
+			<td id="prodTotal">${product.quantity * product.productPrice}</td>
 		</tr>`;
 		sn++;
 	});
