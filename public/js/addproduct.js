@@ -179,3 +179,34 @@ document.querySelector(".next").addEventListener("click", () => {
   pageNumber++;
   allProducts();
 });
+const searchPro = async () => {
+  const data = {
+    searchTerm: document.querySelector("#search").value,
+  };
+  let allProducts = await fetch(
+    "http://localhost:5000/admin/product/search-product",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  );
+  allProducts = await allProducts.json();
+  addToProTable(allProducts);
+
+  removeProduct();
+
+  editProduct();
+
+  checkPagination(allProducts);
+};
+
+document.querySelector("#search").addEventListener("keyup", () => {
+  searchPro();
+
+  if (document.querySelector("#search").value < 1) {
+    allProducts();
+  }
+});

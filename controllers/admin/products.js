@@ -116,3 +116,12 @@ exports.postStat = async (req, res, next) => {
     console.log(error);
   }
 };
+exports.postSearchProduct = async (req, res) => {
+  console.log("Inside");
+  console.log(req.body.searchTerm);
+  const searchTerm = req.body.searchTerm;
+  var employeeRes = await Product.find({
+    name: RegExp(searchTerm, "i"),
+  });
+  res.status(200).json(employeeRes);
+};
