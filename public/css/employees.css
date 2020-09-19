@@ -93,3 +93,6 @@ i:hover {
   width: 84%;
   bottom: 10px;
 }
+.star {
+  -webkit-text-security: disc;
+}
