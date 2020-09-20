@@ -82,7 +82,32 @@ exports.getStat = async (req, res, next) => {
 			if (arr.includes(bill.date)) return;
 			else arr.push(bill.date);
 		});
+		console.log(arr);
 
+		let totalSales = 0;
+		bills.forEach((bill) => {
+			totalSales += bill.totalPrice;
+		});
+		console.log(bills);
+		arr = arr.reverse();
+		res.render("admin/stats", { username, access, bills, arr, totalSales });
+	} catch (error) {
+		console.log(error);
+	}
+};
+exports.postStat = async (req, res, next) => {
+	const { username, access } = req.session.user;
+	const { date } = req.body;
+	console.log(date);
+	try {
+		const bills = await Bill.find({ date });
+		console.log(bills);
+		const allBills = await Bill.find({}, { date: 1 });
+		let arr = [];
+		allBills.forEach((bill) => {
+			if (arr.includes(bill.date)) return;
+			else arr.push(bill.date);
+		});
 		let totalSales = 0;
 		bills.forEach((bill) => {
 			totalSales += bill.totalPrice;
@@ -93,35 +118,12 @@ exports.getStat = async (req, res, next) => {
 		console.log(error);
 	}
 };
-exports.postStat = async (req, res, next) => {
-	const { username, access } = req.session.user;
-	const date = req.date;
-	console.log(date);
-	try {
-		const bills = await Bill.find({ date });
-		console.log(bills);
-		const allBills = await Bill.find({}, { date: 1, totalPrice: 1 });
-		let arr = [];
-		allBills.forEach((bill) => {
-			if (arr.includes(bill.date)) totalSales;
-			else arr.push(bill.date);
-		});
-		let totalSales = 0;
-		bills.forEach((bill) => {
-			totalSales += bill.totalPrice;
-		});
-		arr = arr.reverse();
-		res.render("admin/stats", { username, access, bills, arr });
-	} catch (error) {
-		console.log(error);
-	}
-};
 exports.postSearchProduct = async (req, res) => {
-  console.log("Inside");
-  console.log(req.body.searchTerm);
-  const searchTerm = req.body.searchTerm;
-  var employeeRes = await Product.find({
-    name: RegExp(searchTerm, "i"),
-  });
-  res.status(200).json(employeeRes);
+	console.log("Inside");
+	console.log(req.body.searchTerm);
+	const searchTerm = req.body.searchTerm;
+	var employeeRes = await Product.find({
+		name: RegExp(searchTerm, "i"),
+	});
+	res.status(200).json(employeeRes);
 };
