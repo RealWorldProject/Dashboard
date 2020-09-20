@@ -105,7 +105,7 @@ const addToEmpTable = (employees) => {
       <td>${sn}</td>
       <td>${employee.name}</td>
       <td>${employee.username}</td>
-      <td>${employee.password}</td>
+      <td class="star">${employee.password}</td>
       <td>${employee.access}</td>
       
       <td>
