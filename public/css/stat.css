@@ -1,42 +1,50 @@
 .container-stat {
-  margin-left: 300px;
+	margin-left: 300px;
 }
 .top {
-  display: flex;
-  width: 400px;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	width: 400px;
+	align-items: center;
+	justify-content: space-between;
 }
 .record {
-  margin-left: 20px;
-  background-color: white;
-  padding: 20px;
-  width: 1150px;
-  z-index: -1;
-  box-shadow: 1px 1px 5px grey;
+	margin-left: 20px;
+	background-color: white;
+	padding: 20px;
+	width: 1150px;
+	z-index: -1;
+	box-shadow: 1px 1px 5px grey;
 }
 .bill {
-  align-items: center;
-  margin-left: 250px;
-  width: 600px;
-  border: 1px solid black;
-  margin-bottom: 5px;
+	align-items: center;
+	margin-left: 250px;
+	width: 600px;
+	border: 1px dotted black;
+	margin-bottom: 5px;
+	border-radius: 10px;
+	margin-top: 20px;
+	transition: all 0.2s ease-in;
+}
+
+.bill:hover {
+	transform: translateY(-15px);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 .bill h4,
 .bill h5 {
-  text-align: center;
+	text-align: center;
 }
 .totalSales hr {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 #sales {
-  border-radius: 4px;
-  background-color: rgb(3, 167, 167);
-  color: whitesmoke;
-  padding: 15px;
-  position: absolute;
-  margin-right: 5px;
-  box-shadow: 2px 2px 5px grey;
-  top: 170px;
-  right: 73px;
+	border-radius: 4px;
+	background-color: rgb(3, 167, 167);
+	color: whitesmoke;
+	padding: 15px;
+	position: absolute;
+	margin-right: 5px;
+	box-shadow: 2px 2px 5px grey;
+	top: 170px;
+	right: 73px;
 }
