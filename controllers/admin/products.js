@@ -76,21 +76,11 @@ exports.getStat = async (req, res, next) => {
 	date = date.toISOString().slice(0, 10);
 	try {
 		const bills = await Bill.find({ date });
-		const allBills = await Bill.find({}, { date: 1 });
-		let arr = [];
-		allBills.forEach((bill) => {
-			if (arr.includes(bill.date)) return;
-			else arr.push(bill.date);
-		});
-		console.log(arr);
-
 		let totalSales = 0;
 		bills.forEach((bill) => {
 			totalSales += bill.totalPrice;
 		});
-		console.log(bills);
-		arr = arr.reverse();
-		res.render("admin/stats", { username, access, bills, arr, totalSales });
+		res.render("admin/stats", { username, access, bills, totalSales });
 	} catch (error) {
 		console.log(error);
 	}
@@ -101,19 +91,11 @@ exports.postStat = async (req, res, next) => {
 	console.log(date);
 	try {
 		const bills = await Bill.find({ date });
-		console.log(bills);
-		const allBills = await Bill.find({}, { date: 1 });
-		let arr = [];
-		allBills.forEach((bill) => {
-			if (arr.includes(bill.date)) return;
-			else arr.push(bill.date);
-		});
 		let totalSales = 0;
 		bills.forEach((bill) => {
 			totalSales += bill.totalPrice;
 		});
-		arr = arr.reverse();
-		res.render("admin/stats", { username, access, bills, arr, totalSales });
+		res.render("admin/stats", { username, access, bills, totalSales });
 	} catch (error) {
 		console.log(error);
 	}
