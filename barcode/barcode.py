@@ -9,7 +9,7 @@ import numpy as np
 import requests
 from gpiozero import Buzzer
 
-URL = 'http://192.168.43.83:5000/billing/device-dashboard/add-to-device'
+URL = 'http://localhost:5000/billing/device-dashboard/add-to-device'
 Buzz = Buzzer(17)
 
 # construct the argument parser and parse the arguments
@@ -54,7 +54,7 @@ while True:
         # draw the barcode data and barcode type on the image
         text = "{}".format(barcodeData)
         print(text)
-        payload = {'barcode': text, "deviceID":'5eb27d6d6fc15035d8d27008'}
+        payload = {'barcode': text, "deviceID": '5eb27d6d6fc15035d8d27008'}
         requests.post(URL, json=payload)
         Buzz.on()
         time.sleep(0.1)
@@ -68,10 +68,9 @@ while True:
             csv.write("{},{}\n".format(datetime.datetime.now(),
                                        barcodeData))
             csv.flush()
-            
-            
+
             found.add(barcodeData)
-            
+
 # show the output frame
         cv2.imshow("Barcode Scanner", frame)
         key = cv2.waitKey(1) & 0xFF

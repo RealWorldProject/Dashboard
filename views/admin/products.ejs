@@ -1,159 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
-    <!--Import Google Icon Font-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <!--For Fa Fa icons-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/css/product.css" />
-    <link rel="stylesheet" type="text/css" href="/css/product_addproduct.css" />
-    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!--For Fa Fa icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-    <title>Products</title>
-  </head>
+  <link rel="stylesheet" type="text/css" href="/css/product.css" />
+  <link rel="stylesheet" type="text/css" href="/css/product_addproduct.css" />
+  <link rel="stylesheet" type="text/css" href="/css/nav.css" />
 
-  <body>
-    <%- include('../layout/nav.ejs', {title: 'Product', username, access}) %>
-    <div class="container-product">
-      <div class="card">
-        <table>
-          <thead>
-            <tr>
-              <th>S.N</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Barcode</th>
-              <th>Action</th>
-            </tr>
-          </thead>
+  <title>Products</title>
+</head>
 
-          <tbody></tbody>
-        </table>
+<body>
+  <%- include('../layout/nav.ejs', {title: 'Product', username, access}) %>
+  <div class="container-product">
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>S.N</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Barcode</th>
+            <th>Weight</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="lower-section">
+      <div class="pagination">
+        <a class="waves-effect waves-light btn previous">Previous</a>
+        <a class="waves-effect waves-light btn next">Next</a>
       </div>
-      <div class="lower-section">
-        <div class="pagination">
-          <a class="waves-effect waves-light btn previous">Previous</a>
-          <a class="waves-effect waves-light btn next">Next</a>
-        </div>
 
-        <div class="add-product">
-          <button
-            data-target="addProductForm"
-            class="btn-floating btn-large waves-effect waves-light modal-trigger add"
-          >
-            <i class="material-icons">add</i>
-          </button>
-        </div>
+      <div class="add-product">
+        <button data-target="addProductForm" class="btn-floating btn-large waves-effect waves-light modal-trigger add">
+          <i class="material-icons">add</i>
+        </button>
       </div>
-      <!-- ----------------Add Product Form-------------- -->
-      <div class="modal">
-        <div class="modal-content">
-          <form id="addProductForm">
-            <span class="modal-close btn-flat">&times;</span>
-            <h1>Company</h1>
-            <p
-              id="info"
-              style="
+    </div>
+    <!-- ----------------Add Product Form-------------- -->
+    <div class="modal">
+      <div class="modal-content">
+        <form id="addProductForm">
+          <span class="modal-close btn-flat">&times;</span>
+          <h1>Company</h1>
+          <p id="info" style="
                 font-size: 15px;
                 margin-bottom: 15px;
                 font-family: sans-serif;
-              "
-            >
-              Add a new product using this form. Fill them all.
-            </p>
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  type="text"
-                  placeholder=""
-                  id="name"
-                  name="name"
-                  required
-                  class="validate"
-                />
-                <label style="font-size: 25px" for="name">Product Name</label>
-              </div>
+              ">
+            Add a new product using this form. Fill them all.
+          </p>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" placeholder="" id="name" name="name" required class="validate" />
+              <label style="font-size: 25px" for="name">Product Name</label>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  placeholder=""
-                  id="price"
-                  name="price"
-                  type="text"
-                  required
-                  class="validate"
-                />
-                <label style="font-size: 25px" for="price">Product Price</label>
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="" id="price" name="price" type="text" required class="validate" />
+              <label style="font-size: 25px" for="price">Product Price</label>
             </div>
+          </div>
 
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  placeholder=""
-                  id="qty"
-                  name="qty"
-                  type="text"
-                  required
-                  class="validate"
-                />
-                <label style="font-size: 25px" for="qty"
-                  >Product Quantity</label
-                >
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="" id="qty" name="qty" type="text" required class="validate" />
+              <label style="font-size: 25px" for="qty">Product Quantity</label>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input
-                  placeholder=""
-                  id="barcode"
-                  name="barcode"
-                  type="number"
-                  required
-                  class="validate"
-                />
-                <label style="font-size: 25px" for="barcode">Barcode</label>
-              </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="" id="barcode" name="barcode" type="number" required class="validate" />
+              <label style="font-size: 25px" for="barcode">Barcode</label>
             </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="" id="weight" name="weight" type="number" required class="validate" />
+              <label style="font-size: 25px" for="weignt">Weight</label>
+            </div>
+          </div>
 
-            <input type="hidden" id="productID" name="productID" />
+          <input type="hidden" id="productID" name="productID" />
 
-            <button
-              class="btn-floating btn-large waves-effect waves-light add"
-              id="btnAdd"
-            >
-              Add Product
-            </button>
-          </form>
-        </div>
+          <button class="btn-floating btn-large waves-effect waves-light add" id="btnAdd">
+            Add Product
+          </button>
+        </form>
       </div>
-      <!-- ----------------Product form close-------------- -->
     </div>
+    <!-- ----------------Product form close-------------- -->
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="/js/nav.js"></script>
-    <script src="/js/addproduct.js"></script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/addproduct.js"></script>
+</body>
+
 </html>

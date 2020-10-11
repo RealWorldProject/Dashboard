@@ -11,13 +11,15 @@ exports.postAddProduct = async (req, res) => {
 	const price = parseInt(req.body.price);
 	const qty = parseInt(req.body.qty);
 	const barcode = req.body.barcode;
+	const weight = req.body.weight;
 	const data = {
 		name,
 		price,
 		qty,
 		barcode,
+		weight,
 	};
-	const product = new Product({ name, price, qty, barcode });
+	const product = new Product({ name, price, qty, barcode, weight });
 	try {
 		await product.save();
 	} catch (err) {
@@ -34,7 +36,6 @@ exports.getAllProduct = async (req, res, next) => {
 		.sort({ name: 1 })
 		.skip(proPerPage * (page - 1))
 		.limit(proPerPage);
-	console.log(product);
 	res.status(200).json(product);
 };
 
