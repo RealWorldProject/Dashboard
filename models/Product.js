@@ -8,6 +8,7 @@ const productSchema = mongoose.Schema({
 	qty: Number,
 	category: String,
 	barcode: String,
+	weight: Number,
 });
 
 module.exports = mongoose.model("Product", productSchema);
