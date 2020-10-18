@@ -10,6 +10,7 @@ router.get("/device/:deviceID", deviceController.getBilling);
 router.get("/add-to-device", deviceController.getAddToDevice);
 router.post("/add-to-device", deviceController.postAddToDevice);
 router.post("/add-to-device-test", deviceController.postAddToDeviceTest);
+router.post("/weight", deviceController.postWeightChanged);
 router.post("/delete", deviceController.postRemoveFromDevice);
 router.get("/checkout/:billID", deviceController.getCheckout);
 router.post("/checkout", deviceController.postCheckout);

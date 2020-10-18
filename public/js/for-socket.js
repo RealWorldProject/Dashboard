@@ -1,7 +1,7 @@
 const socket = io();
-const table = document.querySelector('.devicetable tbody');
+const table = document.querySelector(".devicetable tbody");
 
-socket.on('addedProducts', (data) => {
+socket.on("addedProducts", (data) => {
 	let tableHtml = table.innerHTML;
 	data = data.data;
 	newData = data[data.length - 1];
@@ -26,8 +26,8 @@ socket.on('addedProducts', (data) => {
 	toRemove();
 });
 
-socket.on('updatedProducts', (data) => {
-	const prodQty = document.querySelectorAll('.devicetable tbody #prodQty');
+socket.on("updatedProducts", (data) => {
+	const prodQty = document.querySelectorAll(".devicetable tbody #prodQty");
 	data = data.data;
 	for (let index = 0; index < data.length; index++) {
 		prodQty[index].innerText = data[index].quantity;
@@ -36,12 +36,12 @@ socket.on('updatedProducts', (data) => {
 });
 
 const updateTotal = () => {
-	const prodQty = document.querySelectorAll('.devicetable tbody #prodQty');
+	const prodQty = document.querySelectorAll(".devicetable tbody #prodQty");
 	const prodPrice = document.querySelectorAll(
-		'.devicetable tbody #prodPrice'
+		".devicetable tbody #prodPrice"
 	);
 	const prodTotal = document.querySelectorAll(
-		'.devicetable tbody #prodTotal'
+		".devicetable tbody #prodTotal"
 	);
 	//updating total of each products
 	for (let index = 0; index < prodQty.length; index++) {
@@ -53,12 +53,15 @@ const updateTotal = () => {
 	calculateTotal();
 };
 
-socket.on('cartCleared', (data) => {
-	table.innerHTML = '';
+socket.on("cartCleared", (data) => {
+	table.innerHTML = "";
 	grandTotal.value = 0;
 });
 
-socket.on('remove', (data) => {
+socket.on("remove", (data) => {
 	const productID = data.productID;
 	document.querySelector(`.row${productID}`).remove();
+});
+socket.on("weightRemoved", (data) => {
+	console.log(data);
 });

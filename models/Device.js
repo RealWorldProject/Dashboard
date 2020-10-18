@@ -8,6 +8,10 @@ const deviceSchema = mongoose.Schema({
 	},
 	macaddress: String,
 	status: Boolean,
+	weight: {
+		type: Number,
+		default: 0,
+	},
 	cart: {
 		items: [
 			{
