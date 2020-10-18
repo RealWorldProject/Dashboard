@@ -54,15 +54,34 @@ exports.getAddToDevice = async (req, res, next) => {
 };
 
 exports.postAddToDevice = async (req, res, next) => {
-	const { barcode, deviceID } = req.body;
+	const { barcode, deviceID, weight } = req.body;
 	try {
 		const device = await Device.findById(deviceID);
 		const product = await Product.findOne({ barcode: barcode });
-		console.log(product);
 		await device.addToCart(product._id);
 		product.qty -= 1;
 		await product.save();
+		device.weight += weight;
+		await device.save();
 		res.status(200).json(product);
+	} catch (err) {
+		console.log(err);
+		res.send("notdone");
+	}
+};
+
+// for weight
+exports.postWeightChanged = async (req, res, next) => {
+	const { deviceID, weight } = req.body;
+	try {
+		const device = await Device.findById(deviceID);
+		if (weight < device.weight) {
+			const io = socket.getIO();
+			io.emit("weightRemoved", "Something has been removed");
+		}
+		device.weight = weight;
+		await device.save();
+		res.status(200).json(device);
 	} catch (err) {
 		console.log(err);
 		res.send("notdone");
