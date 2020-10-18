@@ -72,12 +72,15 @@ exports.postAddToDevice = async (req, res, next) => {
 
 // for weight
 exports.postWeightChanged = async (req, res, next) => {
-	const { barcode, deviceID, weight } = req.body;
+	const { deviceID, weight } = req.body;
 	try {
 		const device = await Device.findById(deviceID);
+		if (weight < device.weight) {
+			const io = socket.getIO();
+			io.emit("weightRemoved", "Something has been removed");
+		}
+		device.weight = weight;
 		await device.save();
-		const io = socket.getIO();
-		io.emit("weightRemoved", "Something has been removed");
 		res.status(200).json(device);
 	} catch (err) {
 		console.log(err);
